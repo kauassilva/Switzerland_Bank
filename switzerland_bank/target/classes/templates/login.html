@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.com">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/themes/login.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="formulario-login" th:action="@{/client/login}" method="post">
+            <div class="login" id="nome-login">
+                <br>
+
+                <h1>Switzerland Bank</h1>
+                <p>Login</p>
+                <div id='msgError'></div>
+
+            </div>
+            <div class="login">
+                <label for="email" id="labelEmail">E-mail: </label>
+                <input type="text" id="email" name="email" placeholder="Digite seu email ou CPF...">
+                <br>
+            </div>
+            <div class="login">
+                <label for="password" id="labelSenha">Senha: </label>
+                <i id="ver-senha-login" class="fa fa-eye" aria-hidden="true"></i>
+                <!-- <i id="ocultar-senha-login" class="fa fa-eye-slash" aria-hidden="true"></i> -->
+                <input type="password" id="senha" class="password" placeholder="Digite sua senha...">
+
+                <br>
+            </div>
+            <div class="login">
+                <button type="submit" id="botao-login" name="botao-login">Login</button>
+                <br>
+                <br>
+                <a id="esqueci-senha" href="">Esqueci a senha</a>
+            </div>
+            <div class="login">
+
+                Não possuí uma conta? <a id="link-registrar" href="/register">Abra uma
+                    agora</a>
+                <br>
+            </div>
+        </form>
+    </div>
+    <!-- <script src="/assets/scripts/login.js"></script> -->
+</body>
+
+</html>

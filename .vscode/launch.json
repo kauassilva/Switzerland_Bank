@@ -1,0 +1,14 @@
+{
+  "configurations": [
+    {
+      "type": "java",
+      "name": "Spring Boot-SwitzerlandBankApplication<switzerland_bank>",
+      "request": "launch",
+      "cwd": "${workspaceFolder}",
+      "mainClass": "com.api.switzerland_bank.SwitzerlandBankApplication",
+      "projectName": "switzerland_bank",
+      "args": "",
+      "envFile": "${workspaceFolder}/.env"
+    }
+  ]
+}
