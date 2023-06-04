@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.banner{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../icons/background.png);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar{
+    width: 85%;
+    margin: 0 auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.logo{
+    width: 100px;
+    /* cursor: pointer; */
+}
+
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.navbar ul li a{
+    text-decoration: none;
+    color: white;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #e40c4c;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.navbar ul li:hover:after{
+    width: 100%;
+}
+
+/*Animação de aumentar o "Sair"*/
+
+.navbar ul li:hover {
+    font-size: 1.2em;
+    transition: ease all 0.3s;
+}
+  
+  
+  
+.navbar ul li:not(:hover) {
+    transition: ease all 0.3s;
+}
+
+/*-------------fim----------------*/
+
+.content{
+    width: 85%;
+    position: absolute;
+    top: 50%;
+    left: 6%;
+    transform: translateY(-50%);
+    text-align: center;
+    color: white;
+}
+
+.content h1{
+    font-size: 3em; /* estático - 70px */
+    text-transform: uppercase;
+}
+
+.content p{
+    font-size: 1.25em; /* estático - 20px */
+    margin: 20px auto;
+    font-weight: 400;
+    line-height: 25px;
+    text-transform: uppercase;
+    justify-content: space-between;
+}
+
+/*Aumentar letra quando faz o hover*/
+
+button{
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #e40c4c;
+    background: transparent;
+    color: white;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    font-size: 1em;
+}
+
+span{
+    background: #e40c4c;
+    height: 100%;
+    width: 0;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span{
+    width: 100%;
+}
+
+button:hover{
+    border: none;
+    transform: scale(1.09);
+    transition: ease all 0.3s;
+}
+
+button:not(:hover){
+    transition: ease all 0.3s;
+} 
+

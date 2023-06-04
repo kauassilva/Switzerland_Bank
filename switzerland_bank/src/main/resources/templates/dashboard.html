@@ -6,23 +6,40 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SB - Dashboard</title>
-  <!-- <link rel="stylesheet" href="/themes/home.css"> -->
+  <link rel="stylesheet" href="/themes/dashboard.css">
 </head>
 
 <body>
 
-  <main>
-    <h1>Seja bem-vindo ao Switzerland Bank!</h1>
-    <p>Id: <span th:text="${client.id}"></span></p>
-    <p>Nome completo: <span th:text="${client.name}"></span></p>
-    <p>CPF: <span th:text="${client.cpf}"></span></p>
-    <p>Nome da mãe: <span th:text="${client.motherName}"></span></p>
-    <p>Data de nascimento: <span th:text="${client.dateBirth}"></span></p>
-    <p>Gênero: <span th:text="${client.gender}"></span></p>
-    <p>Endereço: <span th:text="${client.address}"></span></p>
-    <p>E-mail: <span th:text="${client.email}"></span></p>
-    <p>Senha: <span th:text="${client.password}"></span></p>
-  </main>
+  <div class="banner">
+    <div class="navbar">
+        <img src="/icons/Icon_Switzerland.png" class="logo">
+        <ul>
+            <li>
+                <a href="/login" id="exit-link">Sair</a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <h1>Bem-Vindo ao Menu Principal</h1>
+        <p>Selecione a opção desejada</p>
+
+        <div>
+            <div>
+                <button onclick="window.location.href='pix.html'"><span></span>PIX</button>
+                <button onclick="window.location.href='/client/account'"><span></span>Visualizar Perfil</button>
+            </div>
+
+            <div>
+                <button onclick="window.location.href='extrato.html'"><span></span>Extrato</button>
+                <button onclick="window.location.href='#'"><span></span>Cartões</button>
+            </div>
+        </div>
+
+    </div>
+
+</div>
 
 </body>
 

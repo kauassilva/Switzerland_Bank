@@ -17,27 +17,35 @@ public class Client {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  @NotBlank
+
+  @NotBlank(message = "O nome não pode ser vazio!")
   @Column(nullable = false, length = 100)
   private String name;
-  @NotBlank
+
+  @NotBlank(message = "O CPF não pode ser vazio ou inválido!")
   @Column(nullable = false, unique = true, length = 11)
   private String cpf;
-  @NotBlank
+
+  @NotBlank(message = "O nome da mãe não pode ser vazio!")
   @Column(nullable = false, length = 100)
   private String motherName;
+
   @Column(nullable = false)
   private LocalDate dateBirth;
-  @NotBlank
+
+  @NotBlank(message = "Selecione o seu gênero!")
   @Column(nullable = false)
   private String gender;
-  @NotBlank
+
+  @NotBlank(message = "O endereço não pode ser vazio!")
   @Column(nullable = false, length = 255)
   private String address;
-  @NotBlank
+
+  @NotBlank(message = "O e-mail não pode ser vazio!")
   @Column(nullable = false, length = 255)
   private String email;
-  @NotBlank
+
+  @NotBlank(message = "A senha não pode ser vazia!")
   @Column(nullable = false, length = 128)
   private String password;
 
