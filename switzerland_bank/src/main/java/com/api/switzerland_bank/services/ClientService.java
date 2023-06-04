@@ -19,5 +19,9 @@ public class ClientService {
   public void save(Client c) {
     clientRepository.save(c);
   }
+
+  public Client findByEmail(String email) {
+    return clientRepository.findByEmail(email);
+  }
   
 }

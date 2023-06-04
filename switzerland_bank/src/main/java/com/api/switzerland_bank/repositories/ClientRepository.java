@@ -7,4 +7,7 @@ import com.api.switzerland_bank.entities.Client;
 
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
+
+  Client findByEmail(String email);
+
 }
