@@ -24,15 +24,16 @@
     <p>E-mail: <span th:text="${client.email}">-</span></p>
   </div>
 
-  <div id="aviso" class="escondido">
-    <h2>Aviso Importante!</h2>
+  <dialog id="modalDeletar">
+    <p id="cancelar">[X]</p>
+    <h2 class="modalTitulo">Aviso Importante!</h2>
     <p>Voce quer mesmo deletar sua conta?</p>
-    <button onclick="fecharAviso()">Sim, tenho certeza!</button>
-  </div>
+    <button onclick="fecharAviso()" id="confirmar">Sim, tenho certeza!</button>
+  </dialog>
 
-  <div class="div">
+  <div class="buttonDiv">
     <button class="editar">Editar</button>
-    <button onclick="exibirAviso()" class="deletar">Deletar conta</button>
+    <button onclick="exibirAviso()" id="deletar">Deletar conta</button>
   </div>
 
   <script src="/scripts/account.js"></script>

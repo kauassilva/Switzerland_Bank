@@ -1,9 +1,22 @@
-function exibirAviso() {
-  var aviso = document.getElementById("aviso");
-  aviso.classList.remove("escondido");
+const buttonDeletar = document.getElementById('deletar');
+const modalDeletar = document.getElementById('modalDeletar');
+const cancelButton = document.getElementById('cancelar');
+const confirmButton = document.getElementById('confirmar');
+
+buttonDeletar.onclick = function () {
+  modalDeletar.showModal();
 }
 
-function fecharAviso() {
-  var aviso = document.getElementById("aviso");
-  aviso.classList.add("escondido");
+cancelButton.onclick = function () {
+  modalDeletar.close();
 }
+
+// function exibirAviso() {
+//   var aviso = document.getElementById("modalDeletar");
+//   aviso.classList.remove("escondido");
+// }
+
+// function fecharAviso() {
+//   var aviso = document.getElementById("modalDeletar");
+//   aviso.classList.add("escondido");
+// }
