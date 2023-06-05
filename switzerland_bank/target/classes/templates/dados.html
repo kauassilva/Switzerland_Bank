@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dados">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Dados</title>
+    <link rel="stylesheet" href="dado.css">
+
+</head>
+    <body class="tudo">
+        <header>
+            <div class="cabeça">
+                <nav>
+                    <ul>
+                        <li><a href="cartoes.html">Voltar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h1 class="titulo-dados">Seus dados</h1>
+                <h2 class="texto-dados">Por favor preencha com seus dados os campos abaixo:</h2>
+                <div class="respostas">
+                    <p>Seções com o "*" são de preenchimento obrigatório!!!</p>
+                    <label for="nome-completo">Seu nome:*</label>
+                    <input type="text" id="nome-completo" class="formulario" required placeholder="Seu nome">
+                    
+                    <label for="nome-mae">Nome da sua mãe:*</label>
+                    <input type="text" id="nome-mae" class="formulario" required placeholder="Nome da sua mãe">
+
+                    <label for="CPF">CPF:*</label>
+                    <input type="number" id="CPF" class="formulario" required placeholder="XXX.XXX.XXX-X">
+
+                    <label for="nomes-cartao">Nome no cartão:*</label>
+                    <input type="text" id="nomes-cartao" class="formulario" required placeholder="Nome no cartão">
+
+                    <label for="dataDeNascimento">Data de nascimento:*</label>
+                    <input type="date" id="dataDeNascimento" class="formulario" required placeholder="Data de nascimento">
+            
+                    <label for="cell">Celular:*</label>
+                    <input type="tel" id="cell" class="formulario" required placeholder="(XX) XXXXX-XXXX">
+            
+                    <label for="email">Email:*</label>
+                    <input type="email" id="email" class="formulario" required placeholder="Seu email, por exemplo: lucas@live.com">
+
+                    <label for="senha">Senha:*</label>
+                    <input type="password" id="senha" class="formulario" required placeholder="Sua senha">
+
+                </div>    
+            </section>
+
+            <div class="botao">
+                <input type="submit" value="Salvar dados" class="enviar">
+            </div>
+        </main>
+    </body>
+</html>
