@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="https://www.thymeleaf.com">
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
 
 <head>
   <meta charset="UTF-8">
@@ -8,34 +8,34 @@
   <title>SB - Conta</title>
   <link rel="stylesheet" href="/themes/account.css">
 </head>
+
 <body>
   <!-- Adicionei o atributo onclick para que seu botão funcione, mas não seria o ideal neste caso -->
   <!-- Sugestão - trocar para o elemento <a href="homePage.html"> -->
   <button class="voltar" onclick="window.location.href='/dashboard'">Voltar</button>
-  
-  <h1 class="cliente">Nome do cliente</h1>
+
+  <h1 class="cliente" th:text="${client.name}">Nome do cliente</h1>
   <div class="dados">
-    <p>CPF:</p>
-    <p>Nome da mãe:</p>
-    <p>Nome do pai:</p>
-    <p>Data de nascimento:</p>
-    <p>Gênero:</p>
-    <p>Endereço:</p>
-    <p>E-mail:</p>
-    <p>Senha:</p>
+    <p>CPF: <span th:text="${client.cpf}">-</span></p>
+    <p>Nome da mãe: <span th:text="${client.motherName}">-</span></p>
+    <p>Data de nascimento: <span th:text="${client.dateBirth}">-</span></p>
+    <p>Gênero: <span th:text="${client.gender}">-</span></p>
+    <p>Endereço: <span th:text="${client.address}">-</span></p>
+    <p>E-mail: <span th:text="${client.email}">-</span></p>
   </div>
-  
+
   <div id="aviso" class="escondido">
     <h2>Aviso Importante!</h2>
     <p>Voce quer mesmo deletar sua conta?</p>
     <button onclick="fecharAviso()">Sim, tenho certeza!</button>
   </div>
-  
+
   <div class="div">
     <button class="editar">Editar</button>
     <button onclick="exibirAviso()" class="deletar">Deletar conta</button>
   </div>
-  
+
   <script src="/scripts/account.js"></script>
 </body>
+
 </html>

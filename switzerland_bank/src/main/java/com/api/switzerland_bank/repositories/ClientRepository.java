@@ -8,6 +8,11 @@ import com.api.switzerland_bank.entities.Client;
 @Repository
 public interface ClientRepository extends JpaRepository<Client, Long> {
 
+  /**
+   * Busca um cliente pelo email.
+   * @param email O email do cliente a ser encontrado.
+   * @return O cliente correspondente ao email fornecido.
+   */
   Client findByEmail(String email);
 
 }

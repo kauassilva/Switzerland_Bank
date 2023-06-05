@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.api.switzerland_bank.entities.Client;
@@ -17,10 +18,11 @@ import jakarta.validation.Valid;
 public class ClientController {
 
   @Autowired
-  ClientService clientService;
+  private ClientService clientService;
+  private static Client authenticatedClient;
 
   // Rota POST para o cadastro
-  @PostMapping("client/save")
+  @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
     clientService.save(c);
     return "redirect:/login";
@@ -34,17 +36,36 @@ public class ClientController {
     Client client = clientService.findByEmail(email);
 
     if (client != null && client.getPassword().equals(password)) {
-      model.addAttribute("client", client);
-      return "dashboard";
+      authenticatedClient = client;
+      return "redirect:/dashboard";
     } else {
-      return "home"; // Página com mensagem de erro
+      return "redirect:/login";
     }
   }
 
-  @GetMapping("client/account")
+  @RequestMapping("client/logout")
+  public String logout() {
+    authenticatedClient = null;
+    return "redirect:/login";
+  }
+
+  @GetMapping("/dashboard")
+  public String dashboard() {
+    if (authenticatedClient != null) {
+      return "dashboard";
+    } else {
+      return "redirect:/login";
+    }
+  }
+
+  @GetMapping("/account")
   public String account(Model model) {
-    model.addAttribute(model);
-    return "account";
+    if (authenticatedClient != null) {
+      model.addAttribute("client", authenticatedClient);
+      return "account";
+    } else {
+      return "redirect:/login";
+    }
   }
 
 }

@@ -1,9 +1,9 @@
 function exibirAviso() {
-    var aviso = document.getElementById("aviso");
-    aviso.classList.remove("escondido");
-  }
+  var aviso = document.getElementById("aviso");
+  aviso.classList.remove("escondido");
+}
 
-  function fecharAviso() {
-    var aviso = document.getElementById("aviso");
-    aviso.classList.add("escondido");
-  }
+function fecharAviso() {
+  var aviso = document.getElementById("aviso");
+  aviso.classList.add("escondido");
+}
