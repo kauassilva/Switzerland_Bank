@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela Pix</title>
+    <link rel="stylesheet" href="/themes/pix.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <nav>
+            <img src="icons/Icon_Switzerland.png" class="logo">
+            <a href="#" class="btn"  onclick="window.location.href='/dashboard'">Voltar</a>
+        </nav>
+
+        <div class="content">
+            <h1>Altere sua chave <span>PIX</span> <br>ou realize:</h1>
+            <button href="#" class="btn" id="btn-chave">Alterar Chave PIX</button>
+        </div>
+
+
+
+
+        <div class="coin-list">
+            <div class="coin" id="coin-transferir">
+
+                <div>
+                    <button><img src="icons/transferir.png">Transferir</button>
+                </div>
+            </div>
+
+
+            <div class="coin" id="coin-receber">
+
+                <div>
+                    <button><img src="icons/receber.png">Receber</button>
+                </div>
+            </div>
+
+
+            <div class="coin" id="coin-cobrar">
+
+                <div>
+                    <button><img src="icons/cobrar.png">Cobrar</button>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <dialog id="modal-transferir" class="modals">
+        <h2 class="modal-titulo">Transferir</h2>
+        <p class="modal-subtitulo">Insira as informações necessárias para realizar a transferência</p>
+        <fieldset>
+            <label for="chave">Insira uma das chaves para transferência <span class="material-icons"> key</span></label>
+            <input type="text" name="chave" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
+            <label for="valor">Insira o valor desejado para transferência <span
+                    class="material-icons">payments</span></label>
+            <input type="number" name="valor" placeholder="R$:0,00" id="valor" /></br></br>
+            <button id="realizar-transferencia">Realizar transferência</button>
+        </fieldset>
+        <p id="fechar-transferir" class="fechar-modal">(X)</p>
+    </dialog>
+
+    <dialog id="modal-receber" class="modals">
+        <h2 class="modal-titulo">Receber</h2>
+        <p class="modal-subtitulo">Insira as informações para o recebimento</p>
+        <fieldset>
+            <label for="chave-recebimento">Insira uma das chaves para recebimento <span class="material-icons">
+                    key</span></label>
+            <input type="text" name="chave-recebimento" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
+            <label for="valor-recebimento">Insira o valor desejado para recebimento <span
+                    class="material-icons">payments</span></label>
+            <input type="number" name="valor-recebimento" placeholder="R$:0,00" id="valor" /></br></br>
+            <button id="Receber">Receber</button>
+        </fieldset>
+        <p id="fechar-receber" class="fechar-modal">(X)</p>
+    </dialog>
+
+    <dialog id="modal-cobrar" class="modals">
+        <h2 class="modal-titulo">Cobrar</h2>
+        <p class="modal-subtitulo">Insira as informações necessárias para que a cobrança seja realizada</p>
+        <fieldset>
+            <label for="chave-cobranca">Insira uma das chaves para cobrança <span class="material-icons">
+                    key</span></label>
+            <input type="text" name="chave-cobranca" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
+            <label for="valor-cobranca">Insira o valor desejado para cobrança <span
+                    class="material-icons">payments</span></label>
+            <input type="number" name="valor-cobranca" placeholder="R$:0,00" id="valor" /></br></br>
+            <button id="realizar-cobranca">Realizar cobrança</button>
+        </fieldset>
+        <p id="fechar-cobrar" class="fechar-modal">(X)</p>
+    </dialog>
+
+    <dialog id="modal-chaves" class="modals">
+        <div id="opcoes-Chaves">
+            <h2 class="modal-titulo">Alterar chave pix</h2>
+            <p class="modal-subtitulo">Selecione a chave que deseja usar</p>
+            <br>
+            <fieldset>
+                <div class="container_Results">
+                    <h5>Chave escolhida:</h5>
+                    <div id="chave_Escolhida">
+                        <div id="numero_Aleatorio">
+                
+                        </div>
+                    </div>
+                  </div>
+            </fieldset>
+            <button type="button" id="chave_Aleatorio">Aleatório <span
+                class="material-icons">shuffle</span></button>
+        <button type="button" id="chave_Cpf">CPF <span class="material-icons">person</span></button>
+        <button type="button" id="chave_Telefone">Número de telefone <span
+                class="material-icons">phone</span></button>
+        <p id="fechar-chaves" class="fechar-modal">(X)</p>
+        </div>
+
+    </dialog>
+
+    <script src="/scripts/pix.js"></script>
+</body>
+
+</html>

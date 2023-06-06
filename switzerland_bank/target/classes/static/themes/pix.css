@@ -1,0 +1,174 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'poppins', sans-serif;
+}
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../icons/background.png);
+    background-size: cover;
+    background-position: center;
+    padding: 0 7%;
+}
+
+nav{
+    width: 85%;
+    margin: auto;
+    padding: 35px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 70px;
+    cursor: pointer;
+}
+
+nav a{
+    color: white;
+    text-decoration: none;
+    border: 1px solid #b1052a;
+    padding: 10px 30px;
+    border-radius: 20px;
+}
+nav .btn{
+    color: white;
+    text-decoration: none;
+    border: 1px solid #b1052a;
+    padding: 10px 30px;
+    border-radius: 20px;
+    
+}
+
+.content{
+    margin-top: 12%;
+}
+.content h1{
+    font-size: 79px;
+    margin-bottom: 15px;
+    color: white;
+}
+.content h1 span{
+    color: #b1052a;
+}
+.content .btn{
+    display: inline-block;
+    margin-top: 30px;
+    background:#b1052a;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+}
+
+.content .btn:hover{
+    background-color: #D14D72;
+}
+
+.content .btn:active{
+    background-color: #FFABAB;
+}
+
+
+
+.logo_conteudo{
+    width: 500px;
+    cursor: pointer;
+    margin-left: 63%;
+}
+
+.coin-list{
+    position: absolute;
+    right: 10%;
+    bottom: 50px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+   
+}
+
+.coin{
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin: 0 15px;
+    color: #D14D72;
+    padding: 20px 30px;
+    
+    
+}
+.coin img{
+    width: 25px;
+    margin-right: 2px;
+    
+}
+
+
+
+.modals{
+    background-color:#D14D72;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 0 #00000070;
+    transition: opacity 0.15s;
+}
+
+.modal-titulo{
+    color: white;
+    text-align: center;
+}
+
+.modal-subtitulo{
+    text-align: center;
+    color: white;
+}
+
+fieldset{
+    background-color: #d80e47;
+}
+
+label{
+    color: white;
+}
+
+.fechar-modal{
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;   
+}
+
+.fechar-modal:hover{
+    background-color: #ff0000;
+   
+}
+
+button{
+    margin-top: 30px;
+    background:#b1052a;
+    color: white;
+    text-decoration: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+button:hover{
+    background-color: #D14D72;
+}
+
+button:active{
+    background-color: #FFABAB;
+}
+
+
+
