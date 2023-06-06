@@ -91,6 +91,16 @@ public class ClientController {
     return "redirect:/login";
   }
 
+  @GetMapping("/card")
+  public String cartoes(Model model){
+    if(authenticatedClient != null){
+      model.addAttribute("client", authenticatedClient);
+      return "cartoes";
+    }else{
+      return "redirect:/login";
+    }
+  }
+
 
   }
 
