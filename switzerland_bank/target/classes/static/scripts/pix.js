@@ -46,19 +46,29 @@ button_fecharChaves.onclick = function (){
     modal_chaves.close()
 }
 
-let btn_aleatorio = document.getElementById("chave_Aleatorio");
-let btn_cpf = document.getElementById("chave_Cpf");
-let btn_telefone = document.getElementById("chave_Telefone");
+var btnCriar = document.getElementById('btn_criar');
+  var inputChave = document.querySelector('#numero_Aleatorio .botao-criar');
 
-let resultado = document.getElementById("chave_Escolhida");
-btn_aleatorio.addEventListener("click",function(){
-    resultado.innerHTML = btn_aleatorio.innerHTML
-})
+  btnCriar.addEventListener('click', function() {
+    inputChave.style.display = 'block';
+    InputEditar.style.display= 'none';
+    InputDeletar.style.display= 'none';
+  });
 
-btn_cpf.addEventListener("click",function(){
-    resultado.innerHTML = btn_cpf.innerHTML
-})
+  var btnEditar = document.getElementById('btn_editar');
+  var InputEditar = document.querySelector('#numero_Aleatorio .botao-editar');
 
-btn_telefone.addEventListener("click",function(){
-    resultado.innerHTML = btn_telefone.innerHTML
-})
+  btnEditar.addEventListener('click', function() {
+    InputEditar.style.display = 'block';
+    inputChave.style.display = 'none';
+    InputDeletar.style.display= 'none';
+  })
+
+  var btnDeletar = document.getElementById('btn_deletar');
+  var InputDeletar = document.querySelector('#numero_Aleatorio .botao-deletar');
+
+  btnDeletar.addEventListener('click', function() {
+    InputDeletar.style.display = 'block';
+    InputEditar.style.display = 'none';
+    inputChave.style.display = 'none';
+  })
