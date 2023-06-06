@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;1,700&family=Poppins:wght@400;500;600;700;900&display=swap');
+
 *{
     margin: 0;
     padding: 0;
@@ -11,44 +13,70 @@
     background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url(../icons/background.png);
     background-size: cover;
     background-position: center;
-    padding: 0 7%;
+    /* padding: 0 7%; */
 }
 
-nav{
+.navbar{
     width: 85%;
-    margin: auto;
+    margin: 0 auto;
     padding: 35px 0;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .logo{
-    width: 70px;
-    cursor: pointer;
+    width: 100px;
+    /* cursor: pointer; */
 }
 
-nav a{
-    color: white;
-    text-decoration: none;
-    border: 1px solid #b1052a;
-    padding: 10px 30px;
-    border-radius: 20px;
+.navbar ul li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
 }
-nav .btn{
-    color: white;
+
+.navbar ul li a{
     text-decoration: none;
-    border: 1px solid #b1052a;
-    padding: 10px 30px;
-    border-radius: 20px;
-    
+    color: white;
+    text-transform: uppercase;
+}
+
+.navbar ul li::after{
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #e40c4c;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: 0.5s;
+    transform: scale(1.05);
+}
+
+.navbar ul li:hover:after{
+    width: 100%;
+}
+
+/*Animação de aumentar o "Sair"*/
+
+.navbar ul li:hover {
+    font-size: 1.2em;
+    transition: ease all 0.3s;
+}
+  
+  
+  
+.navbar ul li:not(:hover) {
+    transition: ease all 0.3s;
 }
 
 .content{
-    margin-top: 12%;
+    padding: 5%;
 }
 .content h1{
-    font-size: 79px;
+    font-size: 3em;
     margin-bottom: 15px;
     color: white;
 }
@@ -65,6 +93,15 @@ nav .btn{
     border-radius: 30px;
 }
 
+.content p {
+    color: white;
+    font-size: 1em;
+}
+
+.content p #balance-span {
+    font-weight: 500;
+}
+
 .content .btn:hover{
     background-color: #D14D72;
 }
@@ -75,20 +112,16 @@ nav .btn{
 
 
 
-.logo_conteudo{
+/* .logo_conteudo{
     width: 500px;
     cursor: pointer;
     margin-left: 63%;
-}
+} */
 
 .coin-list{
-    position: absolute;
-    right: 10%;
-    bottom: 50px;
     display: flex;
-    align-items: center;
-    margin-bottom: 10px;
-   
+    justify-content: space-around;
+    padding: 0 75px;
 }
 
 .coin{
@@ -97,9 +130,7 @@ nav .btn{
     font-size: 14px;
     margin: 0 15px;
     color: #D14D72;
-    padding: 20px 30px;
-    
-    
+    padding: 20px 30px;    
 }
 .coin img{
     width: 25px;

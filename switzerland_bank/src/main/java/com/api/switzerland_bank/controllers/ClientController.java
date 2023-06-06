@@ -30,6 +30,7 @@ public class ClientController {
   // Rota POST para o cadastro
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
+    c.setBalance(10.0); // Adiciona R$10 na conta inicialmente
     clientService.save(c);
     return "redirect:/login";
   }

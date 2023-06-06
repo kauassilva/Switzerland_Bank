@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="UTF-8">
@@ -13,52 +13,59 @@
 <body>
 
     <div class="container">
-        <nav>
-            <img src="icons/Icon_Switzerland.png" class="logo">
-            <a href="#" class="btn"  onclick="window.location.href='/dashboard'">Voltar</a>
-        </nav>
+        <div class="navbar">
+            <img src="/icons/Icon_Switzerland.png" class="logo">
+            <ul>
+                <li>
+                    <a href="/dashboard" id="exit-link">Voltar</a>
+                </li>
+            </ul>
+        </div>
 
         <div class="content">
-            <h1>Altere sua chave <span>PIX</span> <br>ou realize:</h1>
-            <button href="#" class="btn" id="btn-chave">Alterar Chave PIX</button>
+            <h1>Área do <span>PIX</span></h1>
+            <p>Saldo em conta: <span id="balance-span">R$ <span th:text="${client.balance}">-</span></span></p>
+
+
+
+            <div class="coin-list">
+                <div class="coin">
+                    <div>
+                        <button href="#" class="btn" id="btn-chave">Chave PIX</button>
+                    </div>
+                </div>
+
+                <div class="coin" id="coin-transferir">
+                    <div>
+                        <button><img src="icons/transferir.png">Transferir</button>
+                    </div>
+                </div>
+
+
+                <div class="coin" id="coin-receber">
+                    <div>
+                        <button><img src="icons/receber.png">Receber</button>
+                    </div>
+                </div>
+
+
+                <div class="coin" id="coin-cobrar">
+                    <div>
+                        <button><img src="icons/cobrar.png">Cobrar</button>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
-
-
-
-
-        <div class="coin-list">
-            <div class="coin" id="coin-transferir">
-
-                <div>
-                    <button><img src="icons/transferir.png">Transferir</button>
-                </div>
-            </div>
-
-
-            <div class="coin" id="coin-receber">
-
-                <div>
-                    <button><img src="icons/receber.png">Receber</button>
-                </div>
-            </div>
-
-
-            <div class="coin" id="coin-cobrar">
-
-                <div>
-                    <button><img src="icons/cobrar.png">Cobrar</button>
-                </div>
-            </div>
-
-        </div>
-
     </div>
 
     <dialog id="modal-transferir" class="modals">
         <h2 class="modal-titulo">Transferir</h2>
         <p class="modal-subtitulo">Insira as informações necessárias para realizar a transferência</p>
         <fieldset>
-            <label for="chave">Insira uma das chaves para transferência <span class="material-icons"> key</span></label>
+            <label for="chave">Insira uma das chaves para transferência <span class="material-icons">
+                    key</span></label>
             <input type="text" name="chave" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
             <label for="valor">Insira o valor desejado para transferência <span
                     class="material-icons">payments</span></label>
@@ -108,17 +115,16 @@
                     <h5>Chave escolhida:</h5>
                     <div id="chave_Escolhida">
                         <div id="numero_Aleatorio">
-                
+
                         </div>
                     </div>
-                  </div>
+                </div>
             </fieldset>
-            <button type="button" id="chave_Aleatorio">Aleatório <span
-                class="material-icons">shuffle</span></button>
-        <button type="button" id="chave_Cpf">CPF <span class="material-icons">person</span></button>
-        <button type="button" id="chave_Telefone">Número de telefone <span
-                class="material-icons">phone</span></button>
-        <p id="fechar-chaves" class="fechar-modal">(X)</p>
+            <button type="button" id="chave_Aleatorio">Aleatório <span class="material-icons">shuffle</span></button>
+            <button type="button" id="chave_Cpf">CPF <span class="material-icons">person</span></button>
+            <button type="button" id="chave_Telefone">Número de telefone <span
+                    class="material-icons">phone</span></button>
+            <p id="fechar-chaves" class="fechar-modal">(X)</p>
         </div>
 
     </dialog>
