@@ -50,6 +50,8 @@ public class Client {
   private String password;
 
   private Double balance;
+
+  private String chave;
   
   /*
   * Constructors
@@ -79,7 +81,7 @@ public class Client {
       @NotBlank(message = "Selecione o seu gênero!") String gender,
       @NotBlank(message = "O endereço não pode ser vazio!") String address,
       @NotBlank(message = "O e-mail não pode ser vazio!") String email,
-      @NotBlank(message = "A senha não pode ser vazia!") String password, Double balance) {
+      @NotBlank(message = "A senha não pode ser vazia!") String password, Double balance, String chave) {
     this.id = id;
     this.name = name;
     this.cpf = cpf;
@@ -176,5 +178,13 @@ public class Client {
   
   public void setBalance(Double balance) {
     this.balance = balance;
+  }
+
+  public String getChave(){
+    return chave;
+  }
+
+  public void setChave(String chave){
+    this.chave = chave;
   }
 }
