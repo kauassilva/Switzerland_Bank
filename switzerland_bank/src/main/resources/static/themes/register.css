@@ -5,7 +5,6 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
-    
 }
 
 body {
@@ -28,6 +27,16 @@ header {
   font-size: 1em;
   text-decoration: none;
   text-transform: uppercase
+}
+
+#logo{
+  width: 100px;
+  /* cursor: pointer; */
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
 }
 
 
@@ -64,9 +73,9 @@ header ul li:hover {
   transition: ease all 0.3s;
 }
 
-cabecalho ul li:not(:hover) {
+/* .cabecalho ul li:not(:hover) {
   transition: ease all 0.3s;
-}
+} */
 
 
 
@@ -77,7 +86,6 @@ cabecalho ul li:not(:hover) {
   width: 400px;
   max-width: 100%;
   overflow: hidden;
-  /* margin-top: 100px; */
   margin: 50px auto;
 }
 
@@ -85,7 +93,6 @@ cabecalho ul li:not(:hover) {
   background-color: #eee;
   padding: 10px;
   text-align: center;
-    
 }
 
 #nome-banco {

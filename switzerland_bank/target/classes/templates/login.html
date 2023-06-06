@@ -11,6 +11,14 @@
 </head>
 
 <body>
+    <header>
+        <img id="logo" src="icons/Icon_Switzerland.png">
+        <ul>
+            <li><a href="/">Página inicial</a></li>
+            <li><a href="/register">Registrar</a></li>
+        </ul>
+    </header>
+
     <div class="container">
         <form class="formulario-login" th:action="@{/client/login}" th:object="${client}" method="post">
             <div class="login" id="nome-login">

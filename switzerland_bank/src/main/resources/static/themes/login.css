@@ -10,12 +10,67 @@
 body {
   background: rgb(243, 29, 93);
   background: linear-gradient(0deg, rgba(243, 29, 93, 1) 0%, rgba(224, 28, 68, 1) 35%, rgba(185, 26, 108, 1) 100%);
-  display: flex;
   justify-content: center;
   align-items: center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed
+}
+
+header {
+  width: 95%;
+  margin: 0 auto;
+  padding: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; 
+  font-size: 1em;
+  text-decoration: none;
+  text-transform: uppercase
+}
+
+#logo{
+  width: 100px;
+  /* cursor: pointer; */
+}
+
+header ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+header ul li{
+  list-style: none;
+  display: flex;
+  margin: 0 20px;
+  position: relative;
+}
+
+header ul li a{
+  text-decoration: none;
+  color: white;
+}
+
+header ul li::after{
+  content: '';
+  height: 3px;
+  width: 0;
+  background: white;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  transition: 0.5s;
+  transform: scale(1.05);
+}
+
+header ul li:hover:after{
+  width: 100%;
+}
+
+header ul li:hover {
+  transform: scale(1.05);
+  transition: ease all 0.3s;
 }
 
 .container {
@@ -25,7 +80,7 @@ body {
   width: 400px;
   max-width: 100%;
   overflow: hidden;
-  margin-top: 100px;
+  margin: 50px auto;
 }
 
 .formulario-login {
