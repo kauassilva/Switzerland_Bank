@@ -1,5 +1,7 @@
 package com.api.switzerland_bank.services;
 
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
 
 import com.api.switzerland_bank.entities.Client;
@@ -22,6 +24,12 @@ public class ClientService {
   public Client findByEmail(String email) {
     return clientRepository.findByEmail(email);
   }
+
+  public void deleteById(long id){
+    clientRepository.deleteById(id);
+  }
+
+  
 
 
   

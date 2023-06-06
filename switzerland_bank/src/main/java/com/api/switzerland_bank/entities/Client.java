@@ -42,7 +42,7 @@ public class Client {
   private String address;
 
   @NotBlank(message = "O e-mail não pode ser vazio!")
-  @Column(nullable = false, length = 255)
+  @Column(nullable = false, unique=true, length = 255)
   private String email;
 
   @NotBlank(message = "A senha não pode ser vazia!")

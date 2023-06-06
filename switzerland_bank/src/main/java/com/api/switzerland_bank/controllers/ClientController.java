@@ -1,5 +1,7 @@
 package com.api.switzerland_bank.controllers;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -11,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.api.switzerland_bank.entities.Client;
+import com.api.switzerland_bank.repositories.ClientRepository;
 import com.api.switzerland_bank.services.ClientService;
 
 import jakarta.validation.Valid;
@@ -21,6 +24,8 @@ public class ClientController {
   @Autowired
   private ClientService clientService;
   private static Client authenticatedClient;
+  
+ 
 
   // Rota POST para o cadastro
   @PostMapping("/save")
@@ -79,4 +84,15 @@ public class ClientController {
     }
   }
 
-}
+  @RequestMapping("/delete/{id}")
+  public String delete(@PathVariable("id") long id){
+    clientService.deleteById(id);
+    return "redirect:/login";
+  }
+
+
+  }
+
+
+
+

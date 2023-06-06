@@ -12,15 +12,9 @@
 <body>
   <!-- Adicionei o atributo onclick para que seu botão funcione, mas não seria o ideal neste caso -->
   <!-- Sugestão - trocar para o elemento <a href="homePage.html"> -->
-  <header>
-    <ul>
-      <li class="voltar" onclick="window.location.href='/dashboard'">Voltar</li>
-    </ul>
-  </header>
-  
-  <h1 class="cliente">Hej,</h1>
-  <h2 class="cliente" th:text="${client.name}">Nome do cliente</h2>
-  <p id="perfil">Seu Perfil</p>
+  <button class="voltar" onclick="window.location.href='/dashboard'">Voltar</button>
+
+  <h1 class="cliente" th:text="${client.name}">Nome do cliente</h1>
   <div class="dados">
     <p>CPF: <span th:text="${client.cpf}">-</span></p>
     <p>Nome da mãe: <span th:text="${client.motherName}">-</span></p>
@@ -31,10 +25,10 @@
   </div>
 
   <dialog id="modalDeletar">
-    <p id="cancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+    <p id="cancelar">[X]</p>
     <h2 class="modalTitulo">Aviso Importante!</h2>
-    <p id="perguntamodal">Voce quer mesmo deletar sua conta?</p>
-    <button onclick="fecharAviso()" id="confirmar">Sim, tenho certeza!</button>
+    <p>Voce quer mesmo deletar sua conta?</p>
+    <a th:href="@{/delete/{id}(id=${client.id})}">Deletar Conta</a>
   </dialog>
 
   <div class="buttonDiv">
@@ -44,8 +38,5 @@
 
   <script src="/scripts/account.js"></script>
 </body>
-
-<script src="https://kit.fontawesome.com/f9e19193d6.js" crossorigin="anonymous">
-</script>
 
 </html>
