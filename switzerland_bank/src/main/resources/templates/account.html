@@ -12,31 +12,84 @@
 <body>
   <!-- Adicionei o atributo onclick para que seu botão funcione, mas não seria o ideal neste caso -->
   <!-- Sugestão - trocar para o elemento <a href="homePage.html"> -->
-  <button class="voltar" onclick="window.location.href='/dashboard'">Voltar</button>
+    <header>
+      <ul>
+        <li class="voltar" onclick="window.location.href='/dashboard'">
+          Voltar
+        </li>
+      </ul>
+    </header>
 
-  <h1 class="cliente" th:text="${client.name}">Nome do cliente</h1>
-  <div class="dados">
-    <p>CPF: <span th:text="${client.cpf}">-</span></p>
-    <p>Nome da mãe: <span th:text="${client.motherName}">-</span></p>
-    <p>Data de nascimento: <span th:text="${client.dateBirth}">-</span></p>
-    <p>Gênero: <span th:text="${client.gender}">-</span></p>
-    <p>Endereço: <span th:text="${client.address}">-</span></p>
-    <p>E-mail: <span th:text="${client.email}">-</span></p>
-  </div>
+    <h1 class="cliente">Hej,</h1>
+    <h2 class="cliente" th:text="${client.name}">Nome do cliente</h2>
+    <p id="perfil">Seu Perfil</p>
+    <div class="dados">
+      <p>CPF: <span th:text="${client.cpf}">-</span></p>
+      <p>Nome da mãe: <span th:text="${client.motherName}">-</span></p>
+      <p>Data de nascimento: <span th:text="${client.dateBirth}">-</span></p>
+      <p>Gênero: <span th:text="${client.gender}">-</span></p>
+      <p>Endereço: <span th:text="${client.address}">-</span></p>
+      <p>E-mail: <span th:text="${client.email}">-</span></p>
+      <p>Senha: <span>&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;</span></p>
+    </div>
 
-  <dialog id="modalDeletar">
-    <p id="cancelar">[X]</p>
-    <h2 class="modalTitulo">Aviso Importante!</h2>
-    <p>Voce quer mesmo deletar sua conta?</p>
-    <a th:href="@{/delete/{id}(id=${client.id})}">Deletar Conta</a>
+    <div class="buttonDiv">
+      <button class="editar" id="editar">Editar</button>
+      <button onclick="exibirAviso()" id="deletar">Deletar conta</button>
+    </div>
+
+    <!--Modal Deletar-->
+
+    <dialog id="modalDeletar">
+      <section class="modal">
+        <p id="cancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+        <h2 class="modalTitulo">Aviso Importante!</h2>
+        <p id="perguntamodal">Você quer mesmo deletar sua conta?</p>
+        <a id="confirmar" th:href="@{/delete/{id}(id=${client.id})}">Sim, deletar conta</a>
+      </section>
+    </dialog>
+
+  
+<!--Modal Editar-->
+
+  <dialog id="modalEditar">
+    <section class="modal">
+      <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+      <div id="header-modal">
+        <h3 class="modalTitulo">Editar informações</h3>
+      </div>
+      
+      <div>
+        <label for="address">Endereço:</label>
+        <input type="text" name="address" id="address">
+      </div>
+      
+      <div>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email">
+      </div>
+
+      
+      <div>
+        <label for="password">Senha:</label>
+        <input type="password" name="password" id="senha">
+      </div>
+
+      <button id="salvar">
+        Salvar
+      </button>
+    </section>
   </dialog>
 
-  <div class="buttonDiv">
-    <button class="editar">Editar</button>
-    <button onclick="exibirAviso()" id="deletar">Deletar conta</button>
-  </div>
+  
 
-  <script src="/scripts/account.js"></script>
+
 </body>
+
+<script src="/scripts/account.js"></script>
+
+<script
+    src="https://kit.fontawesome.com/f9e19193d6.js"
+    crossorigin="anonymous"></script>
 
 </html>
