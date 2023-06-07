@@ -201,5 +201,26 @@ button:active{
     background-color: #FFABAB;
 }
 
+.botao_confirmar{
+    margin-top: 12px;
+    padding: 4px 4px;
+    border-radius: 10px;
+    font-size: 13px;
+    display: block;
+    margin-top: 14px;
+    float: right;
+}
+
+.campo{
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    width: 200px;
+    margin-top: 14px;
+}
+
+.chaves{
+    text-align: center;
+}
 
 

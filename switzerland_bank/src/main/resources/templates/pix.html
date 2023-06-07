@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tela Pix</title>
+    <title>Pix | Switzerland Bank</title>
+    <link rel="shortcut icon" href="icons/Icon_Switzerland.png" type="image/x-icon">
     <link rel="stylesheet" href="/themes/pix.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -107,17 +108,28 @@
 
     <dialog id="modal-chaves" class="modals">
         <div id="opcoes-Chaves">
-            <h2 class="modal-titulo">Alterar chave pix</h2>
-            <p class="modal-subtitulo">Selecione a chave que deseja usar</p>
+            <h2 class="modal-titulo">Chave Pix</h2>
+            <p class="modal-subtitulo">Escolher Funções Desejável</p>
             <br>
             <fieldset>
                 <div class="container_Results">
-                    <h5>Chave escolhida:</h5>
+                    <h5 class="chaves">Chave Escolhida:</h5>
                     <div id="chave_Escolhida">
                         <div id="numero_Aleatorio">
-                            <input type="text" placeholder="Criar" style="display:none;" class="botao-criar">
-                            <input type="text" placeholder="Editar" style="display:none;" class="botao-editar">
-                            <input type="text" placeholder="Deletar" style="display:none;" class="botao-deletar"> 
+                            <div style="display:none;" class="botao-criar">
+                            <input class="campo" type="text" placeholder="Criar">
+                            <button class="botao_confirmar">Confirmar</button>
+                            </div>
+
+                            <div style="display:none;" class="botao-editar">
+                            <input class="campo" type="text" placeholder="Editar">
+                            <button class="botao_confirmar">Confirmar</button>
+                            </div>
+
+                            <div style="display:none;" class="botao-deletar">
+                            <input class="campo" type="text" placeholder="Deletar">
+                            <button class="botao_confirmar">Confirmar</button>
+                            </div> 
                         </div>
                     </div>
                 </div>
