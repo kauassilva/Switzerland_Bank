@@ -1,7 +1,5 @@
 package com.api.switzerland_bank.controllers;
 
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.api.switzerland_bank.entities.Client;
-import com.api.switzerland_bank.repositories.ClientRepository;
 import com.api.switzerland_bank.services.ClientService;
 
 import jakarta.validation.Valid;
@@ -25,18 +22,16 @@ public class ClientController {
   private ClientService clientService;
   private static Client authenticatedClient;
   
- 
-
   // Rota POST para o cadastro
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
     c.setBalance(10.0); // Adiciona R$10 na conta inicialmente
+    c.setChave(clientService.generateRandomValue(10));
     clientService.save(c);
     return "redirect:/login";
   }
 
   //Rota POST Update
-
   @PostMapping("/update")
   public String updateClient(@ModelAttribute Client c) {
     clientService.save(c);
@@ -110,9 +105,4 @@ public class ClientController {
     }
   }
 
-
-  }
-
-
-
-
+}

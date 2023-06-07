@@ -92,6 +92,7 @@ public class Client {
     this.email = email;
     this.password = password;
     this.balance = balance;
+    this.chave = chave;
   }
 
 

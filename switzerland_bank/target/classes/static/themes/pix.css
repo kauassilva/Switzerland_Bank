@@ -98,10 +98,6 @@
     font-size: 1em;
 }
 
-.content p #balance-span {
-    font-weight: 500;
-}
-
 .content .btn:hover{
     background-color: #D14D72;
 }
@@ -140,7 +136,7 @@
 
 
 
-.modals{
+.modals {
     background-color:#D14D72;
     position: fixed;
     top: 50%;
@@ -150,6 +146,8 @@
     border-radius: 10px;
     box-shadow: 0 0 10px 0 #00000070;
     transition: opacity 0.15s;
+    padding: 10px;
+    width: 380px;
 }
 
 .modal-titulo{
@@ -187,7 +185,7 @@ button{
     background:#b1052a;
     color: white;
     text-decoration: none;
-    padding: 15px 30px;
+    padding: 10px 20px;
     border-radius: 30px;
     cursor: pointer;
     font-size: 15px;

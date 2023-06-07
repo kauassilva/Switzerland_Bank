@@ -25,16 +25,17 @@
 
         <div class="content">
             <h1>Área do <span>PIX</span></h1>
-            <p>Saldo em conta: <span id="balance-span">R$ <span th:text="${client.balance}">-</span></span></p>
+            <p>Saldo em conta: <strong>R$ <span th:text="${client.balance}">-</span></strong></p>
+            <p>Sua chave PIX: <strong><span th:text="${client.chave}">-</span></strong></p>
 
 
 
             <div class="coin-list">
-                <div class="coin">
+                <!-- <div class="coin">
                     <div>
                         <button href="#" class="btn" id="btn-chave">Chave PIX</button>
                     </div>
-                </div>
+                </div> -->
 
                 <div class="coin" id="coin-transferir">
                     <div>
@@ -106,41 +107,39 @@
         <p id="fechar-cobrar" class="fechar-modal">(X)</p>
     </dialog>
 
-    <dialog id="modal-chaves" class="modals">
+    <!-- Modal de Chave Pix -->
+    <!-- <dialog id="modal-chaves" class="modals">
         <div id="opcoes-Chaves">
             <h2 class="modal-titulo">Chave Pix</h2>
-            <p class="modal-subtitulo">Escolher Funções Desejável</p>
-            <br>
-            <fieldset>
-                <div class="container_Results">
-                    <h5 class="chaves">Chave Escolhida:</h5>
-                    <div id="chave_Escolhida">
-                        <div id="numero_Aleatorio">
-                            <div style="display:none;" class="botao-criar">
-                            <input class="campo" type="text" placeholder="Criar">
-                            <button class="botao_confirmar">Confirmar</button>
-                            </div>
+            <p class="modal-subtitulo">Escolha uma função</p>
 
-                            <div style="display:none;" class="botao-editar">
-                            <input class="campo" type="text" placeholder="Editar">
-                            <button class="botao_confirmar">Confirmar</button>
-                            </div>
+            <div id="chave_Escolhida">
+                <div id="modal-conteudos">
+                    <div id="conteudo-criar-chave" style="display:none;">
+                        <form action="" method="post">
+                            <input class="campo" type="text" name="chave" placeholder="Criar">
+                            <button type="submit" class="botao_confirmar">Confirmar</button>
+                        </form>
+                    </div>
 
-                            <div style="display:none;" class="botao-deletar">
-                            <input class="campo" type="text" placeholder="Deletar">
-                            <button class="botao_confirmar">Confirmar</button>
-                            </div> 
-                        </div>
+                    <div id="conteudo-editar-chave" style="display:none;">
+                        <input class="campo" type="text" name="chave" placeholder="Editar">
+                        <button class="botao_confirmar">Confirmar</button>
+                    </div>
+
+                    <div id="conteudo-deletar-chave" style="display:none;">
+                        <input class="campo" type="text" placeholder="Deletar">
+                        <button class="botao_confirmar">Confirmar</button>
                     </div>
                 </div>
-            </fieldset>
+            </div>
+
             <button type="button" id="btn_criar">Criar</button>
             <button type="button" id="btn_editar">Editar</button>
             <button type="button" id="btn_deletar">Deletar</button>
             <p id="fechar-chaves" class="fechar-modal">(X)</p>
         </div>
-
-    </dialog>
+    </dialog> -->
 
     <script src="/scripts/pix.js"></script>
 </body>

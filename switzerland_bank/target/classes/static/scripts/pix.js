@@ -1,3 +1,32 @@
+// Modal de Chave Pix
+// var btnCriar = document.getElementById('btn_criar');
+// var inputChave = document.querySelector('#conteudo-criar-chave');
+
+// btnCriar.addEventListener('click', function() {
+// inputChave.style.display = 'block';
+// InputEditar.style.display= 'none';
+// InputDeletar.style.display= 'none';
+// });
+
+// var btnEditar = document.getElementById('btn_editar');
+// var InputEditar = document.querySelector('#conteudo-editar-chave');
+
+// btnEditar.addEventListener('click', function() {
+// InputEditar.style.display = 'block';
+// inputChave.style.display = 'none';
+// InputDeletar.style.display= 'none';
+// })
+
+// var btnDeletar = document.getElementById('btn_deletar');
+// var InputDeletar = document.querySelector('#conteudo-deletar-chave');
+
+// btnDeletar.addEventListener('click', function() {
+// InputDeletar.style.display = 'block';
+// InputEditar.style.display = 'none';
+// inputChave.style.display = 'none';
+// })
+
+// Modal de Transferir
 const transferir = document.getElementById('coin-transferir')
 const modal_transferir = document.getElementById('modal-transferir')
 const button_fecharTransferir = document.getElementById('fechar-transferir')
@@ -45,30 +74,3 @@ chaves.onclick = function(){
 button_fecharChaves.onclick = function (){
     modal_chaves.close()
 }
-
-var btnCriar = document.getElementById('btn_criar');
-  var inputChave = document.querySelector('#numero_Aleatorio .botao-criar');
-
-  btnCriar.addEventListener('click', function() {
-    inputChave.style.display = 'block';
-    InputEditar.style.display= 'none';
-    InputDeletar.style.display= 'none';
-  });
-
-  var btnEditar = document.getElementById('btn_editar');
-  var InputEditar = document.querySelector('#numero_Aleatorio .botao-editar');
-
-  btnEditar.addEventListener('click', function() {
-    InputEditar.style.display = 'block';
-    inputChave.style.display = 'none';
-    InputDeletar.style.display= 'none';
-  })
-
-  var btnDeletar = document.getElementById('btn_deletar');
-  var InputDeletar = document.querySelector('#numero_Aleatorio .botao-deletar');
-
-  btnDeletar.addEventListener('click', function() {
-    InputDeletar.style.display = 'block';
-    InputEditar.style.display = 'none';
-    inputChave.style.display = 'none';
-  })

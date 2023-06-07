@@ -1,6 +1,6 @@
 package com.api.switzerland_bank.services;
 
-import java.util.Optional;
+import java.util.Random;
 
 import org.springframework.stereotype.Service;
 
@@ -10,6 +10,7 @@ import com.api.switzerland_bank.repositories.ClientRepository;
 @Service
 public class ClientService {
 
+  private static final String CHARACTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
   // Injeção de dependência do ClientRepository
   private final ClientRepository clientRepository;
 
@@ -25,12 +26,21 @@ public class ClientService {
     return clientRepository.findByEmail(email);
   }
 
-  public void deleteById(long id){
+  public void deleteById(long id) {
     clientRepository.deleteById(id);
   }
 
-  
+  public String generateRandomValue(int length) {
+    Random random = new Random();
+    StringBuilder sb = new StringBuilder(length);
 
+    for (int i = 0; i < length; i++) {
+      int randomIndex = random.nextInt(CHARACTERS.length());
+      char randomChar = CHARACTERS.charAt(randomIndex);
+      sb.append(randomChar);
+    }
 
-  
+    return sb.toString();
+  }
+
 }
