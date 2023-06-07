@@ -112,7 +112,7 @@ header ul li:hover {
 
 .login i {
   position: absolute;
-  top: 45%;
+  top: 45px;
   right: 10px;
   color: #3b3b3b;
 }
@@ -194,4 +194,41 @@ button:hover {
   padding: 10px;
   border-radius: 10px;
   display: none;
+}
+
+#modalEsqueciSenha{
+  width: 300px;
+  height: 220px;
+  background-color: #eaeaea;
+  /* padding: 5px; */
+  text-align: center;
+  margin: 0 auto;
+  margin-top: 300px; /* esse faz com que o modal fique no "meio" da tela*/
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  padding: 20px 20px;
+  background-color: #eee;
+  color: #f31d5d;
+  border: none;
+  position: absolute;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#modalEsqueciSenha::backdrop {
+  background:rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transition: ease all 1s;
+}
+
+#modalEsqueciSenha::backdrop {
+  background:rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  transition: ease all 1s;
+}
+
+#modalEsqueciSenha i {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  color: #3b3b3b;
 }

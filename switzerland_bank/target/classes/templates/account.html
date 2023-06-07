@@ -83,7 +83,7 @@
       
       <div class="inputeditsenha">
         <label for="password">Senha:</label>
-        <i id="ver-senha-login" class="fa fa-eye" aria-hidden="true"></i>
+        <i onclick="change('icon')" id="ver-senha-login" class="fa fa-eye" aria-hidden="true"></i>
         
         <input type="password" name="password" id="senha" class="password" th:value="${client.password}">
       </div>
@@ -93,9 +93,6 @@
       </button>
     </form>
   </dialog>
-
-  
-
 
 </body>
 

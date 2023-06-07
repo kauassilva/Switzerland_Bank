@@ -47,7 +47,7 @@
                 <button type="submit" id="botao-login" name="botao-login">Login</button>
                 <br>
                 <br>
-                <a id="esqueci-senha" href="">Esqueci a senha</a>
+                <a id="esqueci-senha">Esqueci a senha</a>
             </div>
             <!--  -->
             <div class="login">
@@ -57,6 +57,21 @@
             </div>
         </form>
     </div>
+
+    <dialog id="modalEsqueciSenha">
+        <form action="">
+            <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+            <label for="email"></label>E-mail:
+            <input type="email">
+
+            <label for="cpf"></label>CPF:
+            <input type="cpf">
+
+            <button type="submit" id="confirmar">
+                Confirmar
+            </button>
+        </form>
+    </dialog>
     <!-- <script src="/assets/scripts/login.js"></script> -->
 </body>
 
