@@ -8,6 +8,7 @@
   <title>SB - Conta</title>
   <link rel="shortcut icon" href="icons/Icon_Switzerland.png" type="image/x-icon">
   <link rel="stylesheet" href="/themes/account.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -80,9 +81,11 @@
       </div>
 
       
-      <div>
+      <div class="inputeditsenha">
         <label for="password">Senha:</label>
-        <input type="password" name="password" id="senha" th:value="${client.password}">
+        <i id="ver-senha-login" class="fa fa-eye" aria-hidden="true"></i>
+        
+        <input type="password" name="password" id="senha" class="password" th:value="${client.password}">
       </div>
 
       <button type="submit" id="salvar">
@@ -97,6 +100,7 @@
 </body>
 
 <script src="/scripts/account.js"></script>
+<script src="scripts/login.js"></script>
 
 <script
     src="https://kit.fontawesome.com/f9e19193d6.js"
