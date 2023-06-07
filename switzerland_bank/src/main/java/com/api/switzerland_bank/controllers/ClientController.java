@@ -116,13 +116,12 @@ public class ClientController {
         double receiverBalance = receiver.getBalance()+valor;
         receiver.setBalance(receiverBalance);
         clientService.save(receiver);
-        System.out.println("PIX enviado para: "+receiver.getName());
       }
 
       // Diminui o saldo do remetente
       double senderBalance = authenticatedClient.getBalance()-valor;
       authenticatedClient.setBalance(senderBalance);
-      System.out.println("PIX enviado pra algum lugar");
+      clientService.save(authenticatedClient);
 
       return "redirect:/pix";
     } else {

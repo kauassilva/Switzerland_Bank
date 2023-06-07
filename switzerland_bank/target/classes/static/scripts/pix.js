@@ -76,3 +76,21 @@ chaves.onclick = function(){
 button_fecharChaves.onclick = function (){
     modal_chaves.close()
 }
+
+
+// Função para aceitar valores decimais no campo de valor monetário
+function validarValor(input) {
+    // Remove todos os caracteres, exceto números e o ponto decimal
+    input.value = input.value.replace(/[^0-9.]/g, '');
+
+    // Verifica se há mais de um ponto decimal e remove o excesso
+    var pontos = input.value.split('.');
+    if (pontos.length > 2) {
+        input.value = pontos[0] + '.' + pontos.slice(1).join('');
+    }
+
+    // Garante que o valor seja um número válido
+    if (isNaN(input.value)) {
+        input.value = '';
+    }
+}

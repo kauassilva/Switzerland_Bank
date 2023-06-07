@@ -72,7 +72,7 @@
                 <input type="text" name="chave" placeholder="Chave" id="chave"/></br></br>
     
                 <label for="valor">Insira o valor desejado para transferência <span class="material-icons">payments</span></label>
-                <input type="number" name="valor" placeholder="R$:0,00" id="valor"/></br>
+                <input type="text" name="valor" placeholder="R$:0,00" id="valor" oninput="validarValor(this)"/></br>
     
                 <button id="realizar-transferencia">Realizar transferência</button>
             </form>
@@ -90,7 +90,7 @@
             <input type="text" name="chave-recebimento" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
             <label for="valor-recebimento">Insira o valor desejado para recebimento <span
                     class="material-icons">payments</span></label>
-            <input type="number" name="valor-recebimento" placeholder="R$:0,00" id="valor" /></br></br>
+            <input type="text" name="valor-recebimento" placeholder="R$:0,00" id="valor" oninput="validarValor(this)"/></br></br>
             <button id="Receber">Receber</button>
         </fieldset>
         <p id="fechar-receber" class="fechar-modal">(X)</p>
@@ -106,7 +106,7 @@
             <input type="text" name="chave-cobranca" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
             <label for="valor-cobranca">Insira o valor desejado para cobrança <span
                     class="material-icons">payments</span></label>
-            <input type="number" name="valor-cobranca" placeholder="R$:0,00" id="valor" /></br></br>
+            <input type="text" name="valor-cobranca" placeholder="R$:0,00" id="valor" oninput="validarValor(this)"/></br></br>
             <button id="realizar-cobranca">Realizar cobrança</button>
         </fieldset>
         <p id="fechar-cobrar" class="fechar-modal">(X)</p>
