@@ -39,6 +39,7 @@ button_fecharTransferir.onclick = function (){
     modal_transferir.close()
 }
 
+// Modal de Receber
 const receber = document.getElementById('coin-receber')
 const modal_receber = document.getElementById('modal-receber')
 const button_fecharReceber = document.getElementById('fechar-receber')
@@ -51,6 +52,7 @@ button_fecharReceber.onclick = function(){
     modal_receber.close()
 }
 
+// Modal de Cobrar
 const cobrar = document.getElementById('coin-cobrar')
 const modal_cobrar = document.getElementById('modal-cobrar')
 const button_fecharCobrar = document.getElementById('fechar-cobrar')

@@ -26,6 +26,10 @@ public class ClientService {
     return clientRepository.findByEmail(email);
   }
 
+  public Client findByChave(String chave) {
+    return clientRepository.findByChave(chave);
+  }
+
   public void deleteById(long id) {
     clientRepository.deleteById(id);
   }
@@ -42,5 +46,6 @@ public class ClientService {
 
     return sb.toString();
   }
+
 
 }

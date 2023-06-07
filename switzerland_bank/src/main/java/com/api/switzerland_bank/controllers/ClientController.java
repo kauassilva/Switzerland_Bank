@@ -105,4 +105,31 @@ public class ClientController {
     }
   }
 
+  @PostMapping("/transfer")
+  public String transfer(@RequestParam("chave") String chave, double valor) {
+    Client receiver = clientService.findByChave(chave);
+
+    // Se o valor for menor ou igual do que o cliente possui na conta
+    if (authenticatedClient.getBalance() >= valor) {
+      // Se o destinatario for encontrado no banco de dados
+      if (receiver != null) {
+        double receiverBalance = receiver.getBalance()+valor;
+        receiver.setBalance(receiverBalance);
+        clientService.save(receiver);
+        System.out.println("PIX enviado para: "+receiver.getName());
+      }
+
+      // Diminui o saldo do remetente
+      double senderBalance = authenticatedClient.getBalance()-valor;
+      authenticatedClient.setBalance(senderBalance);
+      System.out.println("PIX enviado pra algum lugar");
+
+      return "redirect:/pix";
+    } else {
+      // Se o valor for maior do que o cliente possui
+      return "Erro";
+    }
+  
+  }
+
 }

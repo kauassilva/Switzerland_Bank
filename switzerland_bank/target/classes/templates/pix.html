@@ -62,21 +62,25 @@
         </div>
     </div>
 
+    <!-- Modal de Tranferir -->
     <dialog id="modal-transferir" class="modals">
         <h2 class="modal-titulo">Transferir</h2>
         <p class="modal-subtitulo">Insira as informações necessárias para realizar a transferência</p>
         <fieldset>
-            <label for="chave">Insira uma das chaves para transferência <span class="material-icons">
-                    key</span></label>
-            <input type="text" name="chave" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
-            <label for="valor">Insira o valor desejado para transferência <span
-                    class="material-icons">payments</span></label>
-            <input type="number" name="valor" placeholder="R$:0,00" id="valor" /></br></br>
-            <button id="realizar-transferencia">Realizar transferência</button>
+            <form th:action="@{/transfer}" method="post">
+                <label for="chave">Insira a chave PIX do destinatário <span class="material-icons">key</span></label>
+                <input type="text" name="chave" placeholder="Chave" id="chave"/></br></br>
+    
+                <label for="valor">Insira o valor desejado para transferência <span class="material-icons">payments</span></label>
+                <input type="number" name="valor" placeholder="R$:0,00" id="valor"/></br>
+    
+                <button id="realizar-transferencia">Realizar transferência</button>
+            </form>
         </fieldset>
         <p id="fechar-transferir" class="fechar-modal">(X)</p>
     </dialog>
 
+    <!-- Modal de Receber -->
     <dialog id="modal-receber" class="modals">
         <h2 class="modal-titulo">Receber</h2>
         <p class="modal-subtitulo">Insira as informações para o recebimento</p>
@@ -92,6 +96,7 @@
         <p id="fechar-receber" class="fechar-modal">(X)</p>
     </dialog>
 
+    <!-- Modal de Cobrar -->
     <dialog id="modal-cobrar" class="modals">
         <h2 class="modal-titulo">Cobrar</h2>
         <p class="modal-subtitulo">Insira as informações necessárias para que a cobrança seja realizada</p>

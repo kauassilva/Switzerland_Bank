@@ -14,6 +14,6 @@ public interface ClientRepository extends JpaRepository<Client, Long> {
    * @return O cliente correspondente ao email fornecido.
    */
   Client findByEmail(String email);
-
+  Client findByChave(String chave);
   
 }
