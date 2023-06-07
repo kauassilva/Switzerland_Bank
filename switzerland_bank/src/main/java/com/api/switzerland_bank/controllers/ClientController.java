@@ -35,6 +35,15 @@ public class ClientController {
     return "redirect:/login";
   }
 
+  //Rota POST Update
+
+  @PostMapping("/update")
+  public String updateClient(@ModelAttribute Client c) {
+    clientService.save(c);
+    authenticatedClient = c;
+    return "redirect:/account";
+  }
+
   // Rota POST para o login
   @PostMapping("client/login")
   public String login(@RequestParam("email") String email,

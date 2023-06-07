@@ -53,32 +53,41 @@
 <!--Modal Editar-->
 
   <dialog id="modalEditar">
-    <section class="modal">
-      <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+    <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+    <form class="modal" th:action="@{/update}" method="post" th:object="${client}">
       <div id="header-modal">
         <h3 class="modalTitulo">Editar informações</h3>
       </div>
       
+      <input type="hidden" name="id" th:value="${client.id}">
+      <input type="hidden" name="name" th:value="${client.name}">
+      <input type="hidden" name="cpf" th:value="${client.cpf}">
+      <input type="hidden" name="motherName" th:value="${client.motherName}">
+      <input type="hidden" name="dateBirth" th:value="${client.dateBirth}">
+      <input type="hidden" name="gender" th:value="${client.gender}">
+      <input type="hidden" name="balance" th:value="${client.balance}">
+      <input type="hidden" name="chave" th:value="${client.chave}">
+
       <div>
         <label for="address">Endereço:</label>
-        <input type="text" name="address" id="address">
+        <input type="text" name="address" id="address" th:value="${client.address}">
       </div>
       
       <div>
         <label for="email">E-mail:</label>
-        <input type="email" name="email" id="email">
+        <input type="email" name="email" id="email" th:value="${client.email}">
       </div>
 
       
       <div>
         <label for="password">Senha:</label>
-        <input type="password" name="password" id="senha">
+        <input type="password" name="password" id="senha" th:value="${client.password}">
       </div>
 
-      <button id="salvar">
+      <button type="submit" id="salvar">
         Salvar
       </button>
-    </section>
+    </form>
   </dialog>
 
   
