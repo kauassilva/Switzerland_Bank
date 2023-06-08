@@ -39,27 +39,31 @@
                 <i id="ver-senha-login" class="fa fa-eye" aria-hidden="true"></i>
                 <!-- <i id="ocultar-senha-login" class="fa fa-eye-slash" aria-hidden="true"></i> -->
                 <input type="password" name="password" id="senha" class="password" placeholder="Digite sua senha...">
-                <a id="esqueci-senha">Esqueceu a senha?</a>
+                <div id="div-esqueci-senha">
+                    <a id="esqueci-senha">Esqueceu a senha?</a>
+                </div>
             </div>
             <!-- button de submit -->
             <div class="login">
                 <button type="submit" id="botao-login" name="botao-login">Login</button>
             </div>
             <!--  -->
-            <div class="login">
-                <p id="nao-passui-conta">Não possuí uma conta? <a id="link-registrar" href="/register">Abra uma agora</a></p>
+            <div class="login" id="div-nao-possui-conta">
+                <p id="nao-possui-conta">Não possuí uma conta? <a id="link-registrar" href="/register">Abra uma agora</a></p>
             </div>
         </form>
     </div>
 
     <dialog id="modalEsqueciSenha">
-        <form action="">
+        <form  th:action="@{/forgot-password}" method="post" th:object="${client}">
             <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
-            <label for="email"></label>E-mail:
-            <input type="email">
+            <h2>Esqueceu sua senha?</h2>
+            <div id="mensagem-esqueci-senha">Insira o endereço de e-mail e o CPF. Para verificarmos se é você.</div>
+            <!-- <label for="email">E-mail:</label> -->
+            <input name="email" id="email" type="text" placeholder="Endereço do seu email...">
 
-            <label for="cpf"></label>CPF:
-            <input type="cpf">
+            <!-- <label for="cpf">CPF:</label> -->
+            <input name="cpf" id="cpf" type="text" placeholder="Número do seu CPF...">
 
             <button type="submit" id="confirmar">
                 Confirmar
@@ -69,6 +73,6 @@
     <!-- <script src="/assets/scripts/login.js"></script> -->
 </body>
 
-<script src="scripts/login.js"></script>
+<script src="/scripts/login.js"></script>
 
 </html>

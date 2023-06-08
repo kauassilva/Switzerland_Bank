@@ -41,6 +41,13 @@ public class ClientController {
     return "redirect:/account";
   }
 
+  //Rota POST Mudar senha
+  @PostMapping("/updateNewPassword")
+  public String updateNewPasswordClient(@ModelAttribute Client c) {
+    clientService.save(c);
+    return "redirect:/login";
+  }
+
   // Rota POST para o login
   @PostMapping("client/login")
   public String login(@RequestParam("email") String email,
@@ -51,6 +58,21 @@ public class ClientController {
     if (client != null && client.getPassword().equals(password)) {
       authenticatedClient = client;
       return "redirect:/dashboard";
+    } else {
+      return "redirect:/login";
+    }
+  }
+
+  //Rota POST para Esqueci senha
+  @PostMapping("/forgot-password")
+  public String ForgotPassword(@RequestParam("email") String email,
+                      @RequestParam("cpf") String cpf,
+                      Model model) {
+    Client client = clientService.findByEmail(email);
+
+    if (client != null && client.getCpf().equals(cpf)) {
+      model.addAttribute("client", client);
+      return "changePassword";
     } else {
       return "redirect:/login";
     }
