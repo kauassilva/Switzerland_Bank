@@ -30,7 +30,7 @@ header {
 }
 
 #logo{
-  width: 100px;
+  width: 70px;
   /* cursor: pointer; */
 }
 
@@ -89,15 +89,14 @@ header ul li:hover {
 }
 
 .login {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
+  margin-bottom: 1px;
   position: relative;
 
 }
 
 .login label {
   display: inline-block;
-  margin-bottom: 5px;
+  margin-left: 5px;
 }
 
 .login input {
@@ -110,9 +109,17 @@ header ul li:hover {
   outline: none;
 }
 
+#email {
+  margin-bottom: 25px;
+}
+
+#password {
+  margin-bottom: 1px;
+}
+
 .login i {
   position: absolute;
-  top: 45px;
+  top: 40px;
   right: 10px;
   color: #3b3b3b;
 }
@@ -167,6 +174,7 @@ button {
   cursor: pointer;
   transition: all .4s ease-out;
   margin-top: 20px;
+  margin-bottom: 25px;
 }
 
 button:hover {
@@ -175,10 +183,15 @@ button:hover {
   transition: all .5s ease-out;
 }
 
-
+#esqueci-senha {
+  color: #aeaeae;
+  font-size: 13px;
+  margin-left: 230px;
+}
 
 #esqueci-senha:hover {
-  color: rgb(93, 184, 226)
+  color: rgb(93, 184, 226);
+  cursor: pointer;
 }
 
 

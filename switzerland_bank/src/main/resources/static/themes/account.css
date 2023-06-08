@@ -267,7 +267,9 @@ span {
 #modalEditar label {
   display: flex;
   margin-bottom: 2px;
+  margin-left: 10px;
 }
+
 
 #salvar {
   margin-top: 15px;

@@ -28,3 +28,19 @@ buttonEditar.onclick = function () {
 cancelEditButton.onclick = function () {
   modalEditar.close();
 }
+
+
+//função ver senha: constantes 
+const senha = document.querySelector(".password");
+const olhoMostrar = document.querySelector(".fa-eye");
+const olhoOcultar = document.querySelector(".fa-eye-slash");
+
+//condição função ver senha 
+olhoMostrar.onclick = () => {
+  if (senha.type === "password") {
+    senha.type = "text";
+  } else {
+    senha.type = "password";
+  }
+};
+
