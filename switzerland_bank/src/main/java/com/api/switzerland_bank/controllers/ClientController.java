@@ -28,7 +28,7 @@ public class ClientController {
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
     c.setBalance(new BigDecimal(10)); // Adiciona R$10 na conta inicialmente
-    c.setChave(clientService.generateRandomValue(10));
+    c.setChave(clientService.generateRandomValue(10)); // Cria uma chave PIX aleatória de 10 caracteres
     clientService.save(c);
     return "redirect:/login";
   }

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error | Switzerland Bank</title>
+  <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
+  <link rel="stylesheet" href="/themes/errors/error.css">
+
+</head>
+
+<body>
+
+  <div id="error-container">
+    <h1 id="container-title">Oops! Algo deu errado.</h1>
+    <div id="container-layout">
+      <img id="generic-error" src="/icons/computer-troubleshooting-animate.svg" alt="Imagem de Erro">
+      <p id="container-message">Desculpe, ocorreu algum erro desconhecido no sistema. Tente novamente mais tarde.</p>
+    </div>
+    <button id="back-button" onclick="goBack()">Voltar</button>
+    
+    <div id="error-details">
+      <div id="error-header">
+        <p><strong>Status Code:</strong> <span th:text="${errorStatusCode}">-</span></p>
+        <p id="header-separate">&bull;</p>
+        <p><strong>Type:</strong> <span th:text="${errorType}">-</span></p>
+      </div>
+
+      <p id="error-message"><strong>Message:</strong> <span th:text="${errorMessage}">-</span></p>
+    </div>
+  </div>
+
+  <script src="/scripts/error.js"></script>
+</body>
+
+</html>
