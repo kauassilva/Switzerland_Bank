@@ -1,5 +1,6 @@
 package com.api.switzerland_bank.entities;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 import jakarta.persistence.Column;
@@ -49,7 +50,7 @@ public class Client {
   @Column(nullable = false, length = 128)
   private String password;
 
-  private Double balance;
+  private BigDecimal balance;
 
   private String chave;
   
@@ -61,9 +62,13 @@ public class Client {
   }
 
   
-  
-  // public Client(Long id, String name, String cpf, String motherName, LocalDate dateBirth, String gender,
-  // String address, String email, String password) {
+  // public Client(Long id, @NotBlank(message = "O nome não pode ser vazio!") String name,
+  //     @NotBlank(message = "O CPF não pode ser vazio ou inválido!") String cpf,
+  //     @NotBlank(message = "O nome da mãe não pode ser vazio!") String motherName, LocalDate dateBirth,
+  //     @NotBlank(message = "Selecione o seu gênero!") String gender,
+  //     @NotBlank(message = "O endereço não pode ser vazio!") String address,
+  //     @NotBlank(message = "O e-mail não pode ser vazio!") String email,
+  //     @NotBlank(message = "A senha não pode ser vazia!") String password, Double balance, String chave) {
   //   this.id = id;
   //   this.name = name;
   //   this.cpf = cpf;
@@ -73,15 +78,19 @@ public class Client {
   //   this.address = address;
   //   this.email = email;
   //   this.password = password;
+  //   this.balance = balance;
+  //   this.chave = chave;
   // }
-  
+
+
+
   public Client(Long id, @NotBlank(message = "O nome não pode ser vazio!") String name,
       @NotBlank(message = "O CPF não pode ser vazio ou inválido!") String cpf,
       @NotBlank(message = "O nome da mãe não pode ser vazio!") String motherName, LocalDate dateBirth,
       @NotBlank(message = "Selecione o seu gênero!") String gender,
       @NotBlank(message = "O endereço não pode ser vazio!") String address,
       @NotBlank(message = "O e-mail não pode ser vazio!") String email,
-      @NotBlank(message = "A senha não pode ser vazia!") String password, Double balance, String chave) {
+      @NotBlank(message = "A senha não pode ser vazia!") String password, BigDecimal balance, String chave) {
     this.id = id;
     this.name = name;
     this.cpf = cpf;
@@ -94,7 +103,6 @@ public class Client {
     this.balance = balance;
     this.chave = chave;
   }
-
 
 
   /*
@@ -173,11 +181,11 @@ public class Client {
     this.password = password;
   }
   
-  public Double getBalance() {
+  public BigDecimal getBalance() {
     return balance;
   }
-  
-  public void setBalance(Double balance) {
+
+  public void setBalance(BigDecimal balance) {
     this.balance = balance;
   }
 
@@ -188,4 +196,5 @@ public class Client {
   public void setChave(String chave){
     this.chave = chave;
   }
+
 }

@@ -78,7 +78,7 @@ button_fecharChaves.onclick = function (){
 }
 
 
-// Função para aceitar valores decimais no campo de valor monetário
+// Função para validar os valores decimais no campo de valor monetário
 function validarValor(input) {
     // Remove todos os caracteres, exceto números e o ponto decimal
     input.value = input.value.replace(/[^0-9.]/g, '');

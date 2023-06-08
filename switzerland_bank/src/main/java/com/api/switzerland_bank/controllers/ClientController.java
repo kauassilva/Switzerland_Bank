@@ -1,5 +1,7 @@
 package com.api.switzerland_bank.controllers;
 
+import java.math.BigDecimal;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +27,7 @@ public class ClientController {
   // Rota POST para o cadastro
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
-    c.setBalance(10.0); // Adiciona R$10 na conta inicialmente
+    c.setBalance(new BigDecimal(10)); // Adiciona R$10 na conta inicialmente
     c.setChave(clientService.generateRandomValue(10));
     clientService.save(c);
     return "redirect:/login";
@@ -106,20 +108,21 @@ public class ClientController {
   }
 
   @PostMapping("/transfer")
-  public String transfer(@RequestParam("chave") String chave, double valor) {
+  public String transfer(@RequestParam("chave") String chave, BigDecimal valor) {
     Client receiver = clientService.findByChave(chave);
 
     // Se o valor for menor ou igual do que o cliente possui na conta
-    if (authenticatedClient.getBalance() >= valor) {
+    if (authenticatedClient.getBalance().compareTo(valor) >= 0) {
       // Se o destinatario for encontrado no banco de dados
       if (receiver != null) {
-        double receiverBalance = receiver.getBalance()+valor;
+        // Aumenta o saldo do destinatário
+        BigDecimal receiverBalance = receiver.getBalance().add(valor);
         receiver.setBalance(receiverBalance);
         clientService.save(receiver);
       }
 
       // Diminui o saldo do remetente
-      double senderBalance = authenticatedClient.getBalance()-valor;
+      BigDecimal senderBalance = authenticatedClient.getBalance().subtract(valor);
       authenticatedClient.setBalance(senderBalance);
       clientService.save(authenticatedClient);
 
