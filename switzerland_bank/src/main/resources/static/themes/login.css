@@ -239,20 +239,18 @@ button:hover {
 }
 
 #modalEsqueciSenha{
-  width: 470px;
-  height: 365px;
+  width: 450px;
+  height: 390px;
   background-color: #eaeaea;
-  /* padding: 5px; */
   text-align: center;
   margin: 0 auto;
   margin-top: 300px; /* esse faz com que o modal fique no "meio" da tela*/
-  border: 1px solid #ccc;
   border-radius: 15px;
   padding: 20px 20px;
-  background-color: #eee;
   color: #f31d5d;
   position: absolute;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: none;
 }
 
 #modalEsqueciSenha::backdrop {
@@ -283,11 +281,12 @@ button:hover {
   color: #aeaeae;
   width: 350px;
   margin-left: 40px;
+  margin-bottom: 10px;
 }
 
 #modalEsqueciSenha input {
   margin: 10px;
-  border: 2px solid #f0f0f0;
+  border: 2px solid #ccc;
   display: inline-block;
   border-radius: 10px;
   font-size: 14px;
@@ -298,5 +297,10 @@ button:hover {
 
 #modalEsqueciSenha button {
   margin-top: 20px;
+  width: 350px;
+}
+
+#modalEsqueciSenha button {
+  transition: all .5s ease-out;
 }
 

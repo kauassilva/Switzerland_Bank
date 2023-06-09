@@ -134,8 +134,8 @@ header ul li:hover {
 
 .fa-eye {
   position: absolute;
-  top: 40.6%;
-  right: 100px;
+  top: 350px;
+  right: 450px;
   cursor: pointer;
   color: #f31d5d;
   visibility: visible;

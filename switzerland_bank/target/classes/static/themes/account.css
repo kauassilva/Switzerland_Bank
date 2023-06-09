@@ -165,11 +165,9 @@ span {
   width: 300px;
   height: 155px;
   background-color: #eaeaea;
-  /* padding: 5px; */
   text-align: center;
   margin: 0 auto;
   margin-top: 300px; /* esse faz com que o modal fique no "meio" da tela*/
-  border: 1px solid #ccc;
   border-radius: 15px;
   padding: 20px 20px;
   background-color: #eee;
@@ -235,7 +233,6 @@ span {
   margin-top: 200px; /* esse faz com que o modal fique no "meio" da tela*/
   border-radius: 15px;
   padding: 20px 20px;
-  background-color: #eee;
   color: black;
   border: none;
   position: absolute;
