@@ -3,7 +3,6 @@
 :root {
   --swits-background-color: #eee;
   --swits-principal-color: #f31d5d;
-  --swits-secundary-color: #f31d5d;
 
   --swits-principal-font: 'Poppins', sans-serif;
 }
@@ -113,6 +112,7 @@ width: 80px;
 #download-icon:not(:hover) {
   transition: ease all 0.3s;
 }
+
 /**
  * Main style
  * ==================================================
@@ -136,7 +136,7 @@ table {
 #table-header {
   display: flex;
   width: 100%;
-  background-color: var(--swits-secundary-color);
+  background-color: var(--swits-principal-color);
   padding: 24px 0;
   text-transform: uppercase;
   color: #fff;
@@ -158,17 +158,15 @@ th, td {
   text-align: center;
 }
 
-.data-type {
+.data-type, .data-amount {
   font-weight: 500;
 }
 
-.data-amount-transference {
-  font-weight: 500;
+.transference {
   color: #e74c3c;
 }
 
-.data-amount-deposit {
-  font-weight: 500;
+.deposit {
   color: #4ad14a;
 }
 

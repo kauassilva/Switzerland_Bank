@@ -139,9 +139,29 @@ public class ClientController {
   @PostMapping("/transfer")
   public String transfer(@RequestParam("chave") String chave, BigDecimal valor) {
     Client receiver = clientService.findByChave(chave);
+
+    // Se a chave for igual a do próprio usuário
+    if (receiver.getId() == authenticatedClient.getId()) {
+      return "erro";
+    }
     
     // Se o valor for menor ou igual do que o cliente possui na conta
     if (authenticatedClient.getBalance().compareTo(valor) >= 0) {
+      
+      // Diminui o saldo do remetente
+      BigDecimal senderBalance = authenticatedClient.getBalance().subtract(valor);
+      authenticatedClient.setBalance(senderBalance);
+      clientService.save(authenticatedClient);
+      
+      // Criar o registro para o extrato do remetente
+      var senderStatement = new BankStatement();
+      senderStatement.setClient(authenticatedClient);
+      senderStatement.setTipoTransacao("Pix enviado");
+      senderStatement.setDescricao("para "+receiver.getName());
+      senderStatement.setValor(valor);
+      senderStatement.setDataHora(LocalDateTime.now());
+      bankStatementService.save(senderStatement);
+
       // Se o destinatario for encontrado no banco de dados
       if (receiver != null) {
         // Aumenta o saldo do destinatário
@@ -153,32 +173,17 @@ public class ClientController {
         var receiverStatement = new BankStatement();
         receiverStatement.setClient(receiver);
         receiverStatement.setTipoTransacao("Pix recebido");
-        receiverStatement.setDescricao("Pix de "+authenticatedClient.getName());
+        receiverStatement.setDescricao("de "+authenticatedClient.getName());
         receiverStatement.setValor(valor);
         receiverStatement.setDataHora(LocalDateTime.now());
         bankStatementService.save(receiverStatement);
       }
 
-      // Diminui o saldo do remetente
-      BigDecimal senderBalance = authenticatedClient.getBalance().subtract(valor);
-      authenticatedClient.setBalance(senderBalance);
-      clientService.save(authenticatedClient);
-      
-      // Criar o registro para o extrato do remetente
-      var senderStatement = new BankStatement();
-      senderStatement.setClient(authenticatedClient);
-      senderStatement.setTipoTransacao("Pix enviado");
-      senderStatement.setDescricao("Pix para "+receiver.getName());
-      senderStatement.setValor(valor);
-      senderStatement.setDataHora(LocalDateTime.now());
-      bankStatementService.save(senderStatement);
-
       return "redirect:/pix";
     } else {
-      // Se o valor for maior do que o cliente possui
-      return "Erro";
+      return "erro";
     }
-  
+
   }
 
   @GetMapping("/bank-statement")

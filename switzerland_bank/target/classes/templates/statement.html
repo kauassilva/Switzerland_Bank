@@ -32,7 +32,7 @@
         <tr id="table-header">
           <th>Operação</th>
           <th>Detalhes</th>
-          <th>Valor (em R$)</th>
+          <th>Valor</th>
           <th>Data</th>
         </tr>
       </thead>
@@ -41,12 +41,14 @@
         <tr class="table-row" th:each="bs :${bankStatement}">
           <td class="data-type" th:text="${bs.tipoTransacao}">-</td>
           <td class="data-detail" th:text="${bs.descricao}">-</td>
-          <td class="data-amount-transference" th:text="${bs.valor}">-</td>
-          <td th:text="${bs.dataHora}">-</td>
+          <td class="data-amount" th:text="${bs.valor}">-</td>
+          <td class="data-date-time" th:text="${bs.dataHora}">-</td>
         </tr>
       </tbody>
     </table>
   </main>
+
+  <script src="/scripts/statement.js"></script>
 
 </body>
 

@@ -21,7 +21,7 @@ public class BankStatementService {
     }
 
     public List<BankStatement> getAllBankStatement(Long id) {
-        return bankStatementRepository.findByClientId(id);
+        return bankStatementRepository.findByClientIdOrderByDataHoraDesc(id);
     }
 
 }
