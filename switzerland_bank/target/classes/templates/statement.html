@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extrato | Switzerland Bank</title>
+
+  <!-- Adicionar o logotipo da aplicação -->
+  <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
+  <link rel="stylesheet" href="/themes/statement.css">
+</head>
+
+<body>
+
+  <header>
+    <div id="header-layout">
+      <ul>
+        <li>
+          <a href="/dashboard" id="back-link">Voltar</a>
+        </li>
+      </ul>
+      <h1 id="title">Meu extrato</h1>
+      <p></p>
+    </div>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr id="table-header">
+          <th>Operação</th>
+          <th>Detalhes</th>
+          <th>Valor (em R$)</th>
+          <th>Data</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr class="table-row" th:each="bs :${bankStatement}">
+          <td class="data-type" th:text="${bs.tipoTransacao}">-</td>
+          <td class="data-detail" th:text="${bs.descricao}">-</td>
+          <td class="data-amount-transference" th:text="${bs.valor}">-</td>
+          <td th:text="${bs.dataHora}">-</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+
+</body>
+
+</html>

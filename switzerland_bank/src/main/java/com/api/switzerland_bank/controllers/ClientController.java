@@ -1,6 +1,8 @@
 package com.api.switzerland_bank.controllers;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +14,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.api.switzerland_bank.entities.BankStatement;
 import com.api.switzerland_bank.entities.Client;
+import com.api.switzerland_bank.services.BankStatementService;
 import com.api.switzerland_bank.services.ClientService;
 
 import jakarta.validation.Valid;
@@ -22,6 +26,9 @@ public class ClientController {
 
   @Autowired
   private ClientService clientService;
+  @Autowired
+  private BankStatementService bankStatementService;
+
   private static Client authenticatedClient;
   
   // Rota POST para o cadastro
@@ -132,7 +139,7 @@ public class ClientController {
   @PostMapping("/transfer")
   public String transfer(@RequestParam("chave") String chave, BigDecimal valor) {
     Client receiver = clientService.findByChave(chave);
-
+    
     // Se o valor for menor ou igual do que o cliente possui na conta
     if (authenticatedClient.getBalance().compareTo(valor) >= 0) {
       // Se o destinatario for encontrado no banco de dados
@@ -141,12 +148,30 @@ public class ClientController {
         BigDecimal receiverBalance = receiver.getBalance().add(valor);
         receiver.setBalance(receiverBalance);
         clientService.save(receiver);
+        
+        // Criar o registro para o extrato do destinatário
+        var receiverStatement = new BankStatement();
+        receiverStatement.setClient(receiver);
+        receiverStatement.setTipoTransacao("Pix recebido");
+        receiverStatement.setDescricao("Pix de "+authenticatedClient.getName());
+        receiverStatement.setValor(valor);
+        receiverStatement.setDataHora(LocalDateTime.now());
+        bankStatementService.save(receiverStatement);
       }
 
       // Diminui o saldo do remetente
       BigDecimal senderBalance = authenticatedClient.getBalance().subtract(valor);
       authenticatedClient.setBalance(senderBalance);
       clientService.save(authenticatedClient);
+      
+      // Criar o registro para o extrato do remetente
+      var senderStatement = new BankStatement();
+      senderStatement.setClient(authenticatedClient);
+      senderStatement.setTipoTransacao("Pix enviado");
+      senderStatement.setDescricao("Pix para "+receiver.getName());
+      senderStatement.setValor(valor);
+      senderStatement.setDataHora(LocalDateTime.now());
+      bankStatementService.save(senderStatement);
 
       return "redirect:/pix";
     } else {
@@ -154,6 +179,17 @@ public class ClientController {
       return "Erro";
     }
   
+  }
+
+  @GetMapping("/bank-statement")
+  public String statement(Model model){
+    if(authenticatedClient != null){
+      List<BankStatement> list = bankStatementService.getAllBankStatement(authenticatedClient.getId());
+      model.addAttribute("bankStatement", list);
+      return "statement";
+    }else{
+      return "redirect:/login";
+    }
   }
 
 }

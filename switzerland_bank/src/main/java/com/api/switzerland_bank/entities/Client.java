@@ -14,7 +14,7 @@ import jakarta.validation.constraints.NotBlank;
 @Entity
 @Table(name = "client_tb")
 public class Client {
-  
+
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
@@ -43,7 +43,7 @@ public class Client {
   private String address;
 
   @NotBlank(message = "O e-mail não pode ser vazio!")
-  @Column(nullable = false, unique=true, length = 255)
+  @Column(nullable = false, unique = true, length = 255)
   private String email;
 
   @NotBlank(message = "A senha não pode ser vazia!")
@@ -53,36 +53,13 @@ public class Client {
   private BigDecimal balance;
 
   private String chave;
-  
+
   /*
-  * Constructors
-  * ==================================================
-  */
+   * Constructors
+   * ==================================================
+   */
   public Client() {
   }
-
-  
-  // public Client(Long id, @NotBlank(message = "O nome não pode ser vazio!") String name,
-  //     @NotBlank(message = "O CPF não pode ser vazio ou inválido!") String cpf,
-  //     @NotBlank(message = "O nome da mãe não pode ser vazio!") String motherName, LocalDate dateBirth,
-  //     @NotBlank(message = "Selecione o seu gênero!") String gender,
-  //     @NotBlank(message = "O endereço não pode ser vazio!") String address,
-  //     @NotBlank(message = "O e-mail não pode ser vazio!") String email,
-  //     @NotBlank(message = "A senha não pode ser vazia!") String password, Double balance, String chave) {
-  //   this.id = id;
-  //   this.name = name;
-  //   this.cpf = cpf;
-  //   this.motherName = motherName;
-  //   this.dateBirth = dateBirth;
-  //   this.gender = gender;
-  //   this.address = address;
-  //   this.email = email;
-  //   this.password = password;
-  //   this.balance = balance;
-  //   this.chave = chave;
-  // }
-
-
 
   public Client(Long id, @NotBlank(message = "O nome não pode ser vazio!") String name,
       @NotBlank(message = "O CPF não pode ser vazio ou inválido!") String cpf,
@@ -103,7 +80,6 @@ public class Client {
     this.balance = balance;
     this.chave = chave;
   }
-
 
   /*
    * Getters & Setters
@@ -136,7 +112,7 @@ public class Client {
   public String getMotherName() {
     return motherName;
   }
-  
+
   public void setMotherName(String motherName) {
     this.motherName = motherName;
   }
@@ -156,11 +132,11 @@ public class Client {
   public void setGender(String gender) {
     this.gender = gender;
   }
-  
+
   public String getAddress() {
     return address;
   }
-  
+
   public void setAddress(String address) {
     this.address = address;
   }
@@ -172,7 +148,7 @@ public class Client {
   public void setEmail(String email) {
     this.email = email;
   }
-  
+
   public String getPassword() {
     return password;
   }
@@ -180,7 +156,7 @@ public class Client {
   public void setPassword(String password) {
     this.password = password;
   }
-  
+
   public BigDecimal getBalance() {
     return balance;
   }
@@ -189,11 +165,11 @@ public class Client {
     this.balance = balance;
   }
 
-  public String getChave(){
+  public String getChave() {
     return chave;
   }
 
-  public void setChave(String chave){
+  public void setChave(String chave) {
     this.chave = chave;
   }
 
