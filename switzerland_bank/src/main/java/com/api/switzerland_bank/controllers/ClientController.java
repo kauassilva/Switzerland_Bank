@@ -65,7 +65,8 @@ public class ClientController {
       authenticatedClient = client;
       return "redirect:/dashboard";
     } else {
-      return "redirect:/login";
+      model.addAttribute("mensagemErro", "Informações de Login inválidas. Verifique os dados e tente novamente.");
+      return "login";
     }
   }
 
@@ -80,7 +81,8 @@ public class ClientController {
       model.addAttribute("client", client);
       return "changePassword";
     } else {
-      return "redirect:/login";
+      model.addAttribute("mensagemErro", "Informações de Esqueci Senha inválidas. Verifique os dados e tente novamente.");
+      return "login";
     }
   }
 

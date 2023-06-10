@@ -81,11 +81,21 @@ header ul li:hover {
   max-width: 100%;
   overflow: hidden;
   margin: 50px auto;
+  padding: 40px 20px;
+}
+
+.error-container {
+  /* border: 1px dotted #f31d5d; */
+  color: #f31d5d;
+  background-color: #f31d5d36;
+  border-radius: 6px;
+  padding: 10px;
+  margin-top: 10px;
 }
 
 .formulario-login {
-  padding: 20px;
   height: fit-content;
+  margin-top: 20px;
 }
 
 .login {
@@ -164,8 +174,6 @@ h1:not(:hover) {
 
 p {
   text-align: center;
-  margin-bottom: 10px;
-  color: #d61751;
 }
 
 

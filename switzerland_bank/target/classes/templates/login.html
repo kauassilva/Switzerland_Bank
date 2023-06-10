@@ -13,7 +13,7 @@
 
 <body>
     <header>
-        <img id="logo" src="icons/baseIconSwitzer_blank.svg">
+        <img id="logo" src="/icons/baseIconSwitzer_blank.svg">
         <ul>
             <li><a href="/">Página inicial</a></li>
             <li><a href="/register">Registrar</a></li>
@@ -21,13 +21,17 @@
     </header>
 
     <div class="container">
+        <div class="login" id="nome-login">
+            <h1>Switzerland Bank</h1>
+            <p id="subtitle">Login</p>
+            <div id='msgError'></div>
+        </div>
+
+        <div class="error-container" th:if="${mensagemErro}">
+            <p id="error-mensagem" th:text="${mensagemErro}"></p>
+        </div>
+
         <form class="formulario-login" th:action="@{/client/login}" th:object="${client}" method="post">
-            <div class="login" id="nome-login">
-                <br>
-                <h1>Switzerland Bank</h1>
-                <p>Login</p>
-                <div id='msgError'></div>
-            </div>
             <!-- input do email -->
             <div class="login">
                 <label for="email" id="labelEmail">E-mail: </label>
