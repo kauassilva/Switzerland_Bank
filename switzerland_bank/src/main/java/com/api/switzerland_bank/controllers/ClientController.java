@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -120,9 +119,10 @@ public class ClientController {
     }
   }
 
-  @RequestMapping("/delete/{id}")
-  public String delete(@PathVariable("id") long id){
-    clientService.deleteById(id);
+  @RequestMapping("/delete")
+  public String delete(){
+    clientService.deleteById(authenticatedClient.getId());
+    authenticatedClient = null;
     return "redirect:/login";
   }
 
@@ -155,7 +155,7 @@ public class ClientController {
       
       // Criar o registro para o extrato do remetente
       var senderStatement = new BankStatement();
-      senderStatement.setClient(authenticatedClient);
+      senderStatement.setClientId(authenticatedClient.getId());
       senderStatement.setTipoTransacao("Pix enviado");
       senderStatement.setDescricao("para "+receiver.getName());
       senderStatement.setValor(valor);
@@ -171,7 +171,7 @@ public class ClientController {
         
         // Criar o registro para o extrato do destinatário
         var receiverStatement = new BankStatement();
-        receiverStatement.setClient(receiver);
+        receiverStatement.setClientId(receiver.getId());
         receiverStatement.setTipoTransacao("Pix recebido");
         receiverStatement.setDescricao("de "+authenticatedClient.getName());
         receiverStatement.setValor(valor);

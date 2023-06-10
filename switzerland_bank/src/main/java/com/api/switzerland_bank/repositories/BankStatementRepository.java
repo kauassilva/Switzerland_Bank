@@ -11,7 +11,7 @@ import com.api.switzerland_bank.entities.BankStatement;
 public interface BankStatementRepository extends JpaRepository<BankStatement, Long> {
 
     List<BankStatement> findByClientId(Long id);
-    // Lista com ordem descendente do atributo dateBirth
+    // Lista com ordem descendente do atributo dataHora
     List<BankStatement> findByClientIdOrderByDataHoraDesc(Long id);
 
 }

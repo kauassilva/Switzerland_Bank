@@ -7,8 +7,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,9 +17,7 @@ public class BankStatement {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long bank_statement_id;
 
-    @ManyToOne
-    @JoinColumn(name = "client_id")
-    private Client client;
+    private Long clientId;
 
     private String tipoTransacao;
     private BigDecimal valor;
@@ -32,10 +28,10 @@ public class BankStatement {
     public BankStatement() {
     }
     
-    public BankStatement(Long bank_statement_id, Client client, String tipoTransacao, BigDecimal valor,
-    LocalDateTime dataHora, String descricao) {
+    public BankStatement(Long bank_statement_id, Long clientId, String tipoTransacao, BigDecimal valor,
+            LocalDateTime dataHora, String descricao) {
         this.bank_statement_id = bank_statement_id;
-        this.client = client;
+        this.clientId = clientId;
         this.tipoTransacao = tipoTransacao;
         this.valor = valor;
         this.dataHora = dataHora;
@@ -46,19 +42,19 @@ public class BankStatement {
     public Long getBank_statement_id() {
         return bank_statement_id;
     }
-
+    
     public void setBank_statement_id(Long bank_statement_id) {
         this.bank_statement_id = bank_statement_id;
     }
     
-    public Client getClient() {
-        return client;
+    public Long getClientId() {
+        return clientId;
     }
 
-    public void setClient(Client client) {
-        this.client = client;
+    public void setClientId(Long clientId) {
+        this.clientId = clientId;
     }
-
+    
     public String getTipoTransacao() {
         return tipoTransacao;
     }

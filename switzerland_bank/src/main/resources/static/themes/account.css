@@ -163,7 +163,7 @@ span {
 /* Modal */
 #modalDeletar {
   width: 300px;
-  height: 155px;
+  height: 100px;
   background-color: #eaeaea;
   text-align: center;
   margin: 0 auto;
@@ -196,6 +196,7 @@ span {
 
 .modalTitulo {
   margin-top: -20px;
+  font-size: 1.25em;
   font-size: 20px;
 }
 
@@ -225,7 +226,7 @@ span {
 
 #modalEditar {
   width: 300px;
-  height: 370px;
+  height: 315px;
   background-color: #eaeaea;
   /* padding: 5px; */
   text-align: center;
@@ -235,7 +236,7 @@ span {
   padding: 20px 20px;
   color: black;
   border: none;
-  position: absolute;
+  position: relative;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -252,7 +253,7 @@ span {
 
  .inputeditsenha i {
   position: absolute;
-  top: 292px;
+  top: 244px;
   right: 33px;
   color: #3b3b3b;
 }
