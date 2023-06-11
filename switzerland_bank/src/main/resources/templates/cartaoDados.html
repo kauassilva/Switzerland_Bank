@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="dados" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width">
+    <title>Dados</title>
+    <link rel="stylesheet" href="/themes/cartaoDados.css">
+    <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
+
+</head>
+    <body class="tudo">
+        <header>
+            <div class="cabeça">
+                <nav>
+                    <ul>
+                        <li><a onclick="window.location.href='/card'">Voltar</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <section>
+                <h1 class="titulo-dados">Seus dados</h1>
+               
+                <div class="respostas">
+                    <p type="text" id="nome-completo" class="formulario">Nome do titular do cartão: <span th:text="${card.holderName}">  </span></p>
+                    <p type="number">Número do cartão de crédito: <span th:text="${card.numberCard}" > </span><p>
+                    <p>Data de validade: <span th:text="${card.expirationDate}"> </span></p>
+                    <p>Código de segurança: <span th:text="${card.securityCode}"> </span></p>
+                    <p>Nome da bandeira do cartão: <span th:text="${card.cardName}"> </span></p>
+                    <p>Limite de crédito: <span th:text="${card.creditLimit}"> </span></p>
+                    <p>Agência: <span  th:text="${card.agency}"> </span></p>
+                    <p type="password" id="senha" class="formulario">Senha: <span th:text="${card.cardPassword}"> </span></p> 
+                    </div>    
+            </section>
+
+            
+        </main>
+    </body>
+</html>

@@ -54,6 +54,8 @@ public class Client {
 
   private String chave;
 
+  private String cartao;
+
   /*
    * Constructors
    * ==================================================
@@ -67,7 +69,7 @@ public class Client {
       @NotBlank(message = "Selecione o seu gênero!") String gender,
       @NotBlank(message = "O endereço não pode ser vazio!") String address,
       @NotBlank(message = "O e-mail não pode ser vazio!") String email,
-      @NotBlank(message = "A senha não pode ser vazia!") String password, BigDecimal balance, String chave) {
+      @NotBlank(message = "A senha não pode ser vazia!") String password, BigDecimal balance, String chave, String cartao) {
     this.id = id;
     this.name = name;
     this.cpf = cpf;
@@ -79,6 +81,7 @@ public class Client {
     this.password = password;
     this.balance = balance;
     this.chave = chave;
+    this.cartao = cartao;
   }
 
   /*
@@ -171,6 +174,14 @@ public class Client {
 
   public void setChave(String chave) {
     this.chave = chave;
+  }
+
+  public String getCartao() {
+    return cartao;
+  }
+
+  public void setCartao(String cartao) {
+    this.cartao = cartao;
   }
 
 }

@@ -14,8 +14,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.api.switzerland_bank.entities.BankStatement;
+import com.api.switzerland_bank.entities.Cards;
 import com.api.switzerland_bank.entities.Client;
 import com.api.switzerland_bank.services.BankStatementService;
+import com.api.switzerland_bank.services.CardService;
 import com.api.switzerland_bank.services.ClientService;
 
 import jakarta.validation.Valid;
@@ -30,6 +32,8 @@ public class ClientController {
 
   private static Client authenticatedClient;
   
+  @Autowired
+   private CardService cardService;
   // Rota POST para o cadastro
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
@@ -199,4 +203,24 @@ public class ClientController {
     }
   }
 
+  @PostMapping("/gerarCartao")
+  public String gerarCartao(Model model){
+   
+    return "redirect:/cartaoDados";
 }
+
+  @GetMapping("/cartaoDados")
+  public String cartaoDados(Model model){
+    if(authenticatedClient != null){
+       Cards card = cardService.gerarCartao(authenticatedClient);
+    cardService.save(card);
+    model.addAttribute("card", card);
+      return "cartaoDados";
+    }else{
+      return "redirect:/login";
+    }
+  }
+
+
+}
+

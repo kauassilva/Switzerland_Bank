@@ -1,11 +1,12 @@
 <!DOCTYPE html>
-<html lang="pt-br"  class="Sobre">
+<html lang="pt-br" class="Sobre" xmlns:th="https://www.thymeleaf.org">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Cartões</title>
 
         <link rel="stylesheet" href="/themes/cartao.css">
+        <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
     </head>
 
     <body>
@@ -14,7 +15,7 @@
             
             <nav>
                 <ul>
-                    <li><a href="/dashboard">Voltar</a></li>
+                    <li><a onclick="window.location.href='/dashboard'">Voltar</a></li>
                 </ul>
             </nav>
             </div>
@@ -35,16 +36,17 @@
             </section>
 
             <div class="botoes">
-                <div><a href="dados.html">
-                        <input type="submit" value="Solicitar cartão" class="solicitar"><br>
-                    </a>
+                <div>
+                    <button  onclick="window.location.href='/cartaoDados'" name="cartao"  type="submit" value="Solicitar cartão" id="solicitar"> Solicitar cartão</button> <br>
+        
                 </div>
                 <div><a href="jaTenho.html">
-                        <input type="submit" value="Já tenho cartão" class="ja-tenho">
+                        <button type="submit" value="Já tenho cartão" class="ja-tenho"> já tenho </button>
                     </a>
                 </div>
             </div>
             
         </main>
     </body>
+    <script src="/scripts/cartoes.js"></script>
 </html>

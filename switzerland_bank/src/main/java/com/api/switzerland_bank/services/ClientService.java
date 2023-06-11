@@ -47,5 +47,13 @@ public class ClientService {
     return sb.toString();
   }
 
+    public String cartaoRandom(){
+     Random random = new Random();
+     long numeroPositivo = Math.abs(random.nextLong());
+        String numeroCartao = String.format("%16d", numeroPositivo);
+        return numeroCartao;
 
-}
+  }
+  
+  }
+ 
