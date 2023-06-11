@@ -36,11 +36,11 @@
             </section>
 
             <div class="botoes">
-                <div>
-                    <button onclick="window.location.href='/gerarCartao'" name="cartao"  type="submit" value="Solicitar cartão" id="solicitar"> Solicitar cartão</button> <br>
+                <div th:if="${botaoSolicitar}">
+                    <button onclick="window.location.href='/gerarCartao'" name="cartao" type="submit" id="solicitar">Solicitar cartão</button> <br>
                 </div>
-                <div>
-                    <button onclick="window.location.href='/cartaoDados'" type="submit" value="Já tenho cartão" class="ja-tenho"> já tenho </button>
+                <div th:if="${botaoJaTenho}">
+                    <button onclick="window.location.href='/cartaoDados'" type="submit" class="ja-tenho">Ver dados</button>
                 </div>
             </div>
             

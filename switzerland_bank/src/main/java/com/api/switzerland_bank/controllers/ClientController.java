@@ -136,6 +136,12 @@ public class ClientController {
   public String cartoes(Model model){
     if(authenticatedClient != null){
       model.addAttribute("client", authenticatedClient);
+      
+      if (cardService.findByClientId(authenticatedClient.getId()) != null) {
+        model.addAttribute("botaoJaTenho", "");
+      } else {
+        model.addAttribute("botaoSolicitar", "");
+      }
       return "cartoes";
     }else{
       return "redirect:/login";
