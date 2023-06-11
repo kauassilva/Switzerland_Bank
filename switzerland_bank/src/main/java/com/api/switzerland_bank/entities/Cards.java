@@ -3,12 +3,11 @@ package com.api.switzerland_bank.entities;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,6 +18,7 @@ public class Cards {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long cards_id;
 
+    @Column(unique = true)
     private Long clientId;
 
     private String numberCard;
