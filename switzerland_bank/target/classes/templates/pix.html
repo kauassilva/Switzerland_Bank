@@ -25,7 +25,7 @@
 
         <div class="content">
             <h1>Área do <span>PIX</span></h1>
-            <p>Saldo em conta: <strong>R$ <span th:text="${client.balance}">-</span></strong></p>
+            <p>Saldo em conta: <strong>R$ <span class="balance" th:text="${client.balance}">-</span></strong></p>
             <p>Sua chave PIX: <strong><span th:text="${client.chave}">-</span></strong></p>
 
 
@@ -43,18 +43,7 @@
                     </div>
                 </div>
 
-
-                
-
-
-                <div class="coin" id="coin-cobrar">
-                    <div>
-                        <button><img src="icons/cobrar.png">Cobrar</button>
-                    </div>
-                </div>
-
             </div>
-
         </div>
     </div>
 
@@ -74,25 +63,6 @@
             </form>
         </fieldset>
         <p id="fechar-transferir" class="fechar-modal">(X)</p>
-    </dialog>
-
-    
-   
-
-    <!-- Modal de Cobrar -->
-    <dialog id="modal-cobrar" class="modals">
-        <h2 class="modal-titulo">Cobrar</h2>
-        <p class="modal-subtitulo">Insira as informações necessárias para que a cobrança seja realizada</p>
-        <fieldset>
-            <label for="chave-cobranca">Insira uma das chaves para cobrança <span class="material-icons">
-                    key</span></label>
-            <input type="text" name="chave-cobranca" placeholder="Aleatório/CPF/telefone" id="chave" /></br></br>
-            <label for="valor-cobranca">Insira o valor desejado para cobrança <span
-                    class="material-icons">payments</span></label>
-            <input type="text" name="valor-cobranca" placeholder="R$ 0.00" id="valor" oninput="validarValor(this)"/></br></br>
-            <button id="realizar-cobranca">Realizar cobrança</button>
-        </fieldset>
-        <p id="fechar-cobrar" class="fechar-modal">(X)</p>
     </dialog>
 
     <!-- Modal de Chave Pix -->

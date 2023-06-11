@@ -40,31 +40,17 @@ button_fecharTransferir.onclick = function (){
 }
 
 
-
-// Modal de Cobrar
-const cobrar = document.getElementById('coin-cobrar')
-const modal_cobrar = document.getElementById('modal-cobrar')
-const button_fecharCobrar = document.getElementById('fechar-cobrar')
+// const chaves = document.getElementById('btn-chave')
+// const modal_chaves = document.getElementById('modal-chaves')
+// const button_fecharChaves = document.getElementById('fechar-chaves')
 
 
-cobrar.onclick = function(){
-    modal_cobrar.showModal()
-}
-button_fecharCobrar.onclick = function (){
-    modal_cobrar.close()
-}
-
-const chaves = document.getElementById('btn-chave')
-const modal_chaves = document.getElementById('modal-chaves')
-const button_fecharChaves = document.getElementById('fechar-chaves')
-
-
-chaves.onclick = function(){
-    modal_chaves.showModal()
-}
-button_fecharChaves.onclick = function (){
-    modal_chaves.close()
-}
+// chaves.onclick = function(){
+//     modal_chaves.showModal()
+// }
+// button_fecharChaves.onclick = function (){
+//     modal_chaves.close()
+// }
 
 
 // Função para validar os valores decimais no campo de valor monetário
