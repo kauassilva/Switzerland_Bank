@@ -33,7 +33,7 @@ public class ClientController {
   private static Client authenticatedClient;
   
   @Autowired
-   private CardService cardService;
+  private CardService cardService;
   // Rota POST para o cadastro
   @PostMapping("/save")
   public String addClient(@ModelAttribute @Valid Client c) {
@@ -203,18 +203,23 @@ public class ClientController {
     }
   }
 
-  @PostMapping("/gerarCartao")
+  @GetMapping("/gerarCartao")
   public String gerarCartao(Model model){
-   
-    return "redirect:/cartaoDados";
-}
+    if (authenticatedClient != null) {
+      Cards card = cardService.gerarCartao(authenticatedClient);
+      cardService.save(card);
+      model.addAttribute("card", card);
+      return "cartaoDados";
+    } else {
+      return "redirect:/login";
+    }
+  }
 
   @GetMapping("/cartaoDados")
   public String cartaoDados(Model model){
     if(authenticatedClient != null){
-       Cards card = cardService.gerarCartao(authenticatedClient);
-    cardService.save(card);
-    model.addAttribute("card", card);
+      Cards card = cardService.findByClientId(authenticatedClient.getId());
+      model.addAttribute("card", card);
       return "cartaoDados";
     }else{
       return "redirect:/login";

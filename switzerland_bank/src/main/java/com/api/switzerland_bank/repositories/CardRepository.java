@@ -6,5 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.api.switzerland_bank.entities.Cards;
 @Repository
 public interface CardRepository extends JpaRepository<Cards, Long> {
+
+    Cards findByClientId(Long id);
     
 }
