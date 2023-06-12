@@ -29,7 +29,7 @@
 // Modal de Transferir
 const transferir = document.getElementById('coin-transferir')
 const modal_transferir = document.getElementById('modal-transferir')
-const button_fecharTransferir = document.getElementById('fechar-transferir')
+const button_fecharTransferir = document.getElementById('EditCancelar')
 
 
 transferir.onclick = function (){

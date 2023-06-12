@@ -6,9 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pix | Switzerland Bank</title>
-    <link rel="shortcut icon" href="icons/Icon_Switzerland.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
     <link rel="stylesheet" href="/themes/pix.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -24,9 +25,12 @@
         </div>
 
         <div class="content">
-            <h1>Área do <span>PIX</span></h1>
+            <div id="dadosTransacao">
+                <h1>Área do <span>PIX</span></h1>
             <p>Saldo em conta: <strong>R$ <span class="balance" th:text="${client.balance}">-</span></strong></p>
             <p>Sua chave PIX: <strong><span th:text="${client.chave}">-</span></strong></p>
+            </div>
+            
 
 
 
@@ -38,8 +42,12 @@
                 </div> -->
 
                 <div class="coin" id="coin-transferir">
-                    <div>
-                        <button><img src="icons/transferir.png">Transferir</button>
+                    <div id="buttonPix">
+                        <button><img src="icons/pix.svg">
+                        <div id="nomePix">
+                            Pix
+                        </div>    
+                        </button>
                     </div>
                 </div>
 
@@ -49,20 +57,34 @@
 
     <!-- Modal de Tranferir -->
     <dialog id="modal-transferir" class="modals">
-        <h2 class="modal-titulo">Transferir</h2>
-        <p class="modal-subtitulo">Insira as informações necessárias para realizar a transferência</p>
+        <p id="EditCancelar"><i class="fa fa-times" aria-hidden="true"></i></p>
+        <div id="textModalTransacao">
+            <h2 class="modal-titulo">Transferir</h2>
+            <p class="modal-subtitulo">Insira as informações necessárias para realizar a transferência</p>
+        </div>
+        
         <fieldset>
             <form th:action="@{/transfer}" method="post">
-                <label for="chave">Insira a chave PIX do destinatário <span class="material-icons">key</span></label>
-                <input type="text" name="chave" placeholder="Chave" id="chave"/></br></br>
-    
-                <label for="valor">Insira o valor desejado para transferência <span class="material-icons">payments</span></label>
-                <input type="text" name="valor" placeholder="R$ 0.00" id="valor" oninput="validarValor(this)"/></br>
+                <div id="keyInstruction">
+                    <span class="material-icons">key</span>
+                <label id="labelModal" for="chave">
+                    Insira a chave PIX do destinatário
+                </label>
+                </div>
+                
+                <input type="text" name="chave" placeholder="Chave" id="chave"/>
+                
+                <div id="keyInstruction2">
+                    <span class="material-icons">payments</span>
+                <label id="labelModal" for="valor">Insira o valor desejado para transferência </label>
+                </div>
+                
+                <input type="text" name="valor" placeholder="R$ 0.00" id="valor" oninput="validarValor(this)"/>
     
                 <button id="realizar-transferencia">Realizar transferência</button>
             </form>
         </fieldset>
-        <p id="fechar-transferir" class="fechar-modal">(X)</p>
+        
     </dialog>
 
     <!-- Modal de Chave Pix -->
