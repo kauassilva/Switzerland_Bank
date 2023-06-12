@@ -73,11 +73,9 @@
 }
 
 .content{
-    padding: 5%;
-    margin: 50px auto;
+    margin: 50px auto 0 auto;
     justify-content: center;
     align-items: center;
-    padding: 50px;
 }
 .content h1{
     font-size: 3em;
@@ -163,17 +161,13 @@ text-align: left;
     height: 440px;
     background-color: #f31d5d;
     text-align: center;
-    margin: 0 auto;
-    margin-top: 200px; /* esse faz com que o modal fique no "meio" da tela*/
+    margin: 100px auto 0 auto;
     border-radius: 15px;
     padding: 20px 20px;
     color: black;
     border: none;
     position: relative;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    transform: scale(1.2);
-    transition: opacity 0.5s 0s ease-in-out,
-                transform 0.5s 0s ease-in-out;
 }
 
 .modals input {
