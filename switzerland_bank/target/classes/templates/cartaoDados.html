@@ -1,99 +1,91 @@
 <!DOCTYPE html>
 <html lang="pt-br" class="dados" xmlns:th="https://www.thymeleaf.org">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width">
-    <title>Dados</title>
+    <title>Dados do Cartão | Switzerland Bank</title>
     <link rel="stylesheet" href="/themes/cartaoDados.css">
     <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
 
 </head>
-    <body class="tudo">
-        <header>
-            <div class="cabeça">
-                <nav>
-                    <ul>
-                        <li><a onclick="window.location.href='/card'">Voltar</a></li>
-                    </ul>
-                </nav>
-            </div>
-        </header>
 
-        <main>
-            <section>
-                <h1 class="titulo-dados">Meu SwiterCard</h1>
-               
-            <div class="container"> 
-                <div class="card"> 
-                    <div class="card-inner"> 
-                        <div class="front"> 
-                            <img  src="/icons/cardFlag.png" class="map-img">
-                            <div class="row"> 
+<body class="tudo">
+    <header>
+        <div class="cabeça">
+            <nav>
+                <ul>
+                    <li><a onclick="window.location.href='/card'">Voltar</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section>
+            <h1 class="titulo-dados">Meu SwiterCard</h1>
+
+            <div class="container">
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="front">
+                            <img src="/icons/cardFlag.png" class="map-img">
+                            <div class="row">
                                 <img src="/icons/switzerlandChip.png" width="60px">
                                 <h2>SWITERCARD </h2>
-                                
+
                             </div>
                             <div class="row card-no">
-                                <p><span class="card-number" th:text="${card.numberCard}" > </span></p>
-                                
+                                <p><span class="card-number" th:text="${card.numberCard}"> </span></p>
 
-                            </div> 
+
+                            </div>
                             <div class="row card-holder">
                                 <p>TITULAR DO CARTÃO</p>
                                 <p>DATA DE VALIDADE</p>
 
                             </div>
                             <div class="row name">
-                                <p><span th:text="${card.holderName}">  </span></p>
+                                <p><span th:text="${card.holderName}"> </span></p>
                                 <p><span th:text="${card.expirationDate}"> </span></p>
                             </div>
                         </div>
-                        <div class="back"> 
+                        <div class="back">
                             <img>
-                            <div class="bar"></div>    
-                            <div class="row card-cvv"> 
+                            <div class="bar"></div>
+                            <div class="row card-cvv">
                                 <div>
-                                    <img src="icons/linhaCartao.png">
+                                    <img src="/icons/linhaCartao.png">
                                 </div>
                                 <p> <span th:text="${card.securityCode}"> </span></p>
                             </div>
-                            <div class="row card-text"> 
+                            <div class="row card-text">
                                 <p>CARTÃO SWITERCARD | DESENVOLVIDO E DISTRIBUIDO PELA SWITZERLAND BANK </p>
                             </div>
-                            <div class="row signature"> 
-                                <p>AGÊNCIA: <span  th:text="${card.agency}"> </span></p>
+                            <div class="row signature">
+                                <p>AGÊNCIA: <span th:text="${card.agency}"> </span></p>
                                 <img width="80px">
                             </div>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-
-
-
-
-
-
-
-
-
-
-                
                 <div class="respostas">
-                    <p type="text" id="nome-completo" >NOME DO TITULAR DO CARTÃO :  <span th:text="${card.holderName}"></span></p>
-                    <p type="number">NÚMERO DO CARTÃO DE CRÉDITO :  <span th:text="${card.numberCard}" > </span><p>
-                    <p>DATA DE VALIDADE :  <span th:text="${card.expirationDate}"> </span></p>
-                    <p>CÓDIGO DE SEGURANÇA :  <span th:text="${card.securityCode}"> </span></p>
-                    <p>NOME DA BANDEIRA DO CARTÃO :  <span th:text="${card.cardName}"> </span></p>
-                    <p>LIMITE DE CRÉDITO :  <span th:text="${card.creditLimit}"> </span></p>
-                    <p>AGÊNCIA :  <span  th:text="${card.agency}"> </span></p>
-                    <p type="password" id="senha" >SENHA :  <span th:text="${card.cardPassword}"> </span></p> 
-                    </div>    
-            </section>
+                    <p type="text" id="nome-completo">NOME DO TITULAR DO CARTÃO : <span
+                            th:text="${card.holderName}"></span></p>
+                    <p type="number">NÚMERO DO CARTÃO DE CRÉDITO : <span th:text="${card.numberCard}"> </span>
+                    <p>
+                    <p>DATA DE VALIDADE : <span th:text="${card.expirationDate}"> </span></p>
+                    <p>CÓDIGO DE SEGURANÇA : <span th:text="${card.securityCode}"> </span></p>
+                    <p>NOME DA BANDEIRA DO CARTÃO : <span th:text="${card.cardName}"> </span></p>
+                    <p>LIMITE DE CRÉDITO : <span th:text="${card.creditLimit}"> </span></p>
+                    <p>AGÊNCIA : <span th:text="${card.agency}"> </span></p>
+                    <p type="password" id="senha">SENHA : <span th:text="${card.cardPassword}"> </span></p>
+                </div>
+        </section>
+    </main>
+</body>
+<script src="/scripts/cartoes.js"></script>
 
-            
-        </main>
-    </body>
-     <script src="/scripts/cartoes.js"></script>
 </html>

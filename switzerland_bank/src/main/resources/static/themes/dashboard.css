@@ -132,11 +132,6 @@ button:hover span{
 
 button:hover{
     border: none;
-    /* transform: scale(1.09); */
-    /* transition: ease all 0.3s; */
 }
 
-button:not(:hover){
-    /* transition: ease all 0.3s; */
-} 
 

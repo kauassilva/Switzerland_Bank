@@ -2,45 +2,45 @@
 <html lang="pt-br" xmlns:th="https://www.thymeleaf.org">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard | Switzerland Bank</title>
-  <link rel="shortcut icon" href="icons/Icon_Switzerland.png" type="image/x-icon">
-  <link rel="stylesheet" href="/themes/dashboard.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Switzerland Bank</title>
+    <link rel="shortcut icon" href="/icons/Icon_Switzerland.png" type="image/x-icon">
+    <link rel="stylesheet" href="/themes/dashboard.css">
 </head>
 
 <body>
 
-  <div class="banner">
-    <div class="navbar">
-        <img src="/icons/Icon_Switzerland.png" class="logo">
-        <ul>
-            <li>
-                <a href="/client/logout" id="exit-link">Sair</a>
-            </li>
-        </ul>
-    </div>
+    <div class="banner">
+        <div class="navbar">
+            <img src="/icons/Icon_Switzerland.png" class="logo">
+            <ul>
+                <li>
+                    <a href="/client/logout" id="exit-link">Sair</a>
+                </li>
+            </ul>
+        </div>
 
-    <div class="content">
-        <h1>Bem-Vindo ao Menu Principal</h1>
-        <p>Selecione a opção desejada</p>
-
-        <div>
-            <div>
-                <button onclick="window.location.href='/pix'"><span></span>PIX</button>
-                <button onclick="window.location.href='/account'"><span></span>Visualizar Perfil</button>
-            </div>
+        <div class="content">
+            <h1>Bem-Vindo ao Menu Principal</h1>
+            <p>Selecione a opção desejada</p>
 
             <div>
-                <button onclick="window.location.href='/bank-statement'"><span></span>Extrato</button>
-                <button onclick="window.location.href='/card'"><span></span>Cartões</button>
+                <div>
+                    <button onclick="window.location.href='/pix'"><span></span>PIX</button>
+                    <button onclick="window.location.href='/account'"><span></span>Visualizar Perfil</button>
+                </div>
+
+                <div>
+                    <button onclick="window.location.href='/bank-statement'"><span></span>Extrato</button>
+                    <button onclick="window.location.href='/card'"><span></span>Cartões</button>
+                </div>
             </div>
+
         </div>
 
     </div>
-
-</div>
 
 </body>
 
