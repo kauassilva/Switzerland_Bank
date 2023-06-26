@@ -163,7 +163,7 @@ span {
 /* Modal */
 #modalDeletar {
   width: 300px;
-  height: 100px;
+  height: 150px;
   background-color: #eaeaea;
   text-align: center;
   margin: 0 auto;
@@ -226,7 +226,7 @@ span {
 
 #modalEditar {
   width: 300px;
-  height: 315px;
+  height: 380px;
   background-color: #eaeaea;
   /* padding: 5px; */
   text-align: center;
@@ -253,9 +253,20 @@ span {
 
  .inputeditsenha i {
   position: absolute;
-  top: 244px;
+  top: 290px;
   right: 33px;
   color: #3b3b3b;
+}
+
+.inputeditsenha i:hover {
+  color: #f31d5d;
+  transform: scale(1.1);
+  transition: ease-in-out all .3s;
+  cursor: pointer;
+}
+
+.inputeditsenha i:not(:hover) {
+  transition: ease-in-out all .3s;
 }
 
 #modalEditar h3 {
