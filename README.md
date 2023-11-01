@@ -78,6 +78,4 @@ Este projeto está licenciado sob a [MIT Licence](https://github.com/kauassilva/
 * [Kauã dos Santos Silva](https://github.com/kauassilva) - 12522167075
 * [Amanda Duarte Meneghini do Carmo](https://github.com/AmandaMeneghini) - 12522192773
 * [Breno Luiz Fialho dos Santos](https://github.com/BrenoLuiz19) - 12522169352
-* Lucas Cury Ribeiro Cleto - 12522183599
-* Carlos Caique Silvestre Moreno - 12522172571
-* Sofia Manuela Maggiuzzo Furlanetto - 12522172106
+* [Jullia Kathelyn dos Santos Correia](https://github.com/julliakathelyn) - 12522226203
